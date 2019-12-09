@@ -9,7 +9,7 @@ import tempfile
 import warnings
 import subprocess
 import numpy as np
-from io import read_file, write_file
+from .io import read_file, write_file
 
 
 def eliminate_silence(input_path, output_path):
@@ -87,7 +87,7 @@ def random_cropping(infile, min_len=1):
         # construct file names
         input_file_name = os.path.basename(infile)
         output_file_path = os.path.dirname(infile)
-        name_attribute = "_augmented_randomly_cropped_%s.wav" % min_len
+        name_attribute = "_augmented_randomly_cropped_%s.wav" % str(min_len)
 
         # export data to file
         write_file(output_file_path=output_file_path,
@@ -97,11 +97,12 @@ def random_cropping(infile, min_len=1):
                    fs=fs)
 
     else:
-        warnings.warn(
-            "min_len provided is greater than the duration of the song.")
+        warning_msg = """
+                      min_len provided is greater than the duration of the song.
+                      """
+        warnings.warn(warning_msg)
 
-
-def slowdown(input_file, coefficient=0.8):
+def slow_down(input_file, coefficient=0.8):
     """
     slow or stretch a wave.
     """
@@ -146,7 +147,6 @@ def shift_time(infile, tshift, direction):
     fs, sig = read_file(filename=infile)
     shift = int(tshift * fs) * int(direction == "left") - \
             int(tshift * fs) * int(direction == "right")
-    print(shift)
 
     # shift time
     augmented_sig = np.roll(sig, shift)
@@ -154,7 +154,7 @@ def shift_time(infile, tshift, direction):
     # construct file names
     input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
-    name_attribute = "_augmented_%s_%s_shifted.wav" % (direction, shift)
+    name_attribute = "_augmented_%s_%s_shifted.wav" % (direction, tshift)
 
     # export data to file
     write_file(output_file_path=output_file_path,

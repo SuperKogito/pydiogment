@@ -9,7 +9,7 @@ import tempfile
 import warnings
 import subprocess
 import numpy as np
-from io import read_file, write_file
+from .io import read_file, write_file
 
 
 def convolve(infile, ir_name, level=0.5):
@@ -26,7 +26,7 @@ def convolve(infile, ir_name, level=0.5):
     x = np.copy(x)
 
     # change the path below for the sounds folder
-    ir_path = './sounds/{0}.wav'.format(ir_name)
+    ir_path = 'pydiogment/sounds/{0}.wav'.format(ir_name)
     fs2, ir = read_file(filename=ir_path)
 
     # apply convolution
@@ -38,7 +38,7 @@ def convolve(infile, ir_name, level=0.5):
     # export data to file
     input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
-    name_attribute = "_augmented_{0}_convolved{1}.wav".format(ir_name, level)
+    name_attribute = "_augmented_{0}_convolved_with_level_{1}.wav".format(ir_name, level)
     write_file(output_file_path=output_file_path,
                input_file_name=infile,
                name_attribute=name_attribute,
@@ -60,7 +60,7 @@ def change_tone(infile, tone):
     # prepare file names for the tone changing command
     input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
-    name_attribute = "_augmented_%s_toned.wav" % tone
+    name_attribute = "_augmented_%s_toned.wav" % str(tone)
     outfile = os.path.join(output_file_path, input_file_name + name_attribute)
 
     # change tone

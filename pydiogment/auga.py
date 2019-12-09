@@ -9,12 +9,13 @@ import tempfile
 import warnings
 import subprocess
 import numpy as np
-from io import read_file, write_file
+from .augt import eliminate_silence
+from .io import read_file, write_file
 
 
 def apply_gain(infile, gain):
     """
-    apply gain to infile
+    apply gain to infile.
 
     Args:
         infile (str) : filename
@@ -45,7 +46,7 @@ def add_noise(infile, snr):
     augment data using noise injection.
 
     Note:
-        It simply add some random value into data by using numpy.
+        It simply add some random value into data by using numpy based on the snr.
 
     Args:
         sig  (array) : audio data.
