@@ -64,5 +64,10 @@ def change_tone(infile, tone):
     outfile = os.path.join(output_file_path, input_file_name + name_attribute)
 
     # change tone
-    cmd = f"ffmpeg -i {infile} -af asetrate={fs}*{tone},aresample={fs} {outfile}"
-    os.system(cmd)
+    tone_change_command = ["ffmpeg", "-i", infile,
+                           "-af", "asetrate=", fs, "*", tone,
+                           "aresample=", fs, outfile]
+    _ = subprocess.Popen(tone_change_command,
+                         stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)

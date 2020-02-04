@@ -111,8 +111,13 @@ def slow_down(input_file, coefficient=0.8):
     output_file = input_file.split(".wav")[0] + name_attribute
 
     # apply slowing command
-    cmd = f"ffmpeg -i {input_file} -filter:a \"atempo={coefficient}\" {output_file} > /dev/null"
-    os.system(cmd)
+    slowing_command = ["ffmpeg", "-i", input_file, "-filter:a",
+                      '"atempo=', str(coefficient) + '"',
+                       output_file, "> /dev/null"]
+    _ = subprocess.Popen(slowing_command,
+                         stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
     print("Writing data to " + output_file + ".")
 
 
@@ -122,8 +127,13 @@ def speed(input_file, coefficient=1.25):
     output_file = input_file.split(".wav")[0] + name_attribute
 
     # apply slowing command
-    cmd = f"ffmpeg -i {input_file} -filter:a \"atempo={coefficient}\" {output_file} > /dev/null"
-    os.system(cmd)
+    speeding_command = ["ffmpeg", "-i", input_file, "-filter:a",
+                        '"atempo=', str(coefficient) + '"',
+                        output_file, "> /dev/null"]
+    _ = subprocess.Popen(speeding_command,
+                         stdin=subprocess.PIPE,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
     print("Writing data to " + output_file + ".")
 
 
