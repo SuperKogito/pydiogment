@@ -8,9 +8,8 @@ Welcome to pydiogment's documentation!
 
 .. toctree::
 
-   auga
-   augf
-   augt
+   dependencies
+   code
 
 Indices and tables
 ==================

@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.abspath('../../pydiogment/'))
 # -- Project information -----------------------------------------------------
 
 project = 'pydiogment'
-copyright = '2019, Ayoub Malek'
+copyright = '2020, Ayoub Malek'
 author = 'Ayoub Malek'
 
 # The short X.Y version
@@ -83,9 +83,26 @@ pygments_style = None
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
 
+import sphinx_rtd_theme
+
+html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+                        'canonical_url': '',
+                        'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+                        'logo_only': True,
+                        'display_version': True,
+                        'prev_next_buttons_location': 'bottom',
+                        'style_external_links': False,
+                        # Toc options
+                        'collapse_navigation': True,
+                        'sticky_navigation': True,
+                        'navigation_depth': 4,
+                        'includehidden': True,
+                        'titles_only': False
+}
+html_logo = "_static/icon.png"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
