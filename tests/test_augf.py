@@ -2,6 +2,7 @@
 ############################# tests for augf ###################################
 ################################################################################
 import os
+import time
 import pytest
 from pydiogment.augf import convolve, change_tone
 
@@ -20,10 +21,8 @@ def test_convolve(test_file, ir_name, level):
     fname = "{0}_augmented_{1}_convolved_with_level_{2}.wav".format(test_file.split(".wav")[0],
                                                                     ir_name,
                                                                     level)
+    time.sleep(1)
     assert(os.path.isfile(fname))
-
-    # delete generated file
-    os.remove(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -37,7 +36,5 @@ def test_change_tone(test_file, tone):
 
     # check result
     fname = "%s_augmented_%s_toned.wav" % (test_file.split(".wav")[0], str(tone))
+    time.sleep(1)
     assert(os.path.isfile(fname))
-
-    # delete generated file
-    os.remove(fname)
