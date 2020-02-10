@@ -1,6 +1,6 @@
 """
-Description: amplitude based augmentation techniques/manipulations for audio data.
-Author: Ayoub Malek
+- Description: amplitude based augmentation techniques/manipulations for audio data.
+- Author: Ayoub Malek
 """
 import os
 import math
@@ -18,8 +18,8 @@ def apply_gain(infile, gain):
     apply gain to infile.
 
     Args:
-        infile (str) : filename
-        gain (float) : gain in dB (both positive and negative)
+        infile (str) : input filename/path.
+        gain (float) : gain in dB (both positive and negative).
     """
     # read input file
     fs, x = read_file(filename=infile)
@@ -46,11 +46,11 @@ def add_noise(infile, snr):
     augment data using noise injection.
 
     Note:
-        It simply add some random value into data by using numpy based on the snr.
+        It simply add some random values to the input file data based on the snr.
 
     Args:
-        sig  (array) : audio data.
-        snr  (int) : signal to noise ratio in dB.
+        infile (str) : input filename/path.
+        snr    (int) : signal to noise ratio in dB.
     """
     # read input file
     fs, sig = read_file(filename=infile)
@@ -90,29 +90,21 @@ def fade_in_and_out(infile):
     add a fade in and out effect to the audio file.
 
     Args:
-        infile (array) : audio data.
+        infile (str) : input filename/path.
     """
     # read input file
     fs, sig = read_file(filename=infile)
     kernel = 0.5**np.arange(len(sig))
     window = np.hamming(len(sig))
 
-    # augmented_sig = np.convolve(sig, window, mode='full')
-
     # export data to file
     input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_fade_in_out.wav"
 
-    # eliminate silence
-    non_silence_sig, duration = eliminate_silence(
-        input_path=infile,
-        output_path=os.path.join(output_file_path,
-                                 input_file_name + "_no_silence.wav"))
-
     # fade in and out
-    window = np.hamming(len(non_silence_sig))
-    augmented_sig = window * non_silence_sig
+    window = np.hamming(len(sig))
+    augmented_sig = window * sig
     augmented_sig /= np.mean(np.abs(augmented_sig))
 
     # export data to file

@@ -1,6 +1,6 @@
 """
-Description: frequency based augmentation techniques/manipulations for audio data.
-Author: Ayoub Malek
+- Description: frequency based augmentation techniques/manipulations for audio data.
+- Author: Ayoub Malek
 """
 import os
 import math
@@ -14,11 +14,11 @@ from .io import read_file, write_file
 
 def convolve(infile, ir_name, level=0.5):
     """
-    apply convolution to infile using impulse response given
+    apply convolution to infile using impulse response given impulse response file.
 
     Args:
-        infile (str): Filename
-        ir_name can be  'smartphone_mic' or 'classroom'
+        infile  (str) : input filename/path.
+        ir_name (str) : name of impulse response file.
         level (float) : can be between 0 and 1, default value = 0.5
     """
     # read input file
@@ -65,8 +65,8 @@ def change_tone(infile, tone):
 
     # change tone
     tone_change_command = ["ffmpeg", "-i", infile,
-                           "-af", "asetrate=", fs, "*", tone,
-                           "aresample=", fs, outfile]
+                           "-af", f"asetrate={fs}*{tone},aresample={fs}", outfile]
+
     _ = subprocess.Popen(tone_change_command,
                          stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE,
