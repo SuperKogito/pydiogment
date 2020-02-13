@@ -22,7 +22,7 @@ def eliminate_silence(input_path, output_path=None):
 
     Returns:
 
-        ist including True for successful authentication, False otherwise and
+        list including True for successful authentication, False otherwise and
         a percentage value representing the certainty of the decision.
     """
     # define output name if none specified
@@ -135,7 +135,7 @@ def speed(input_file, coefficient=1.25):
 
 def shift_time(infile, tshift, direction):
     """
-    Augment audio date by shifting the time in the file. Signal can be shifted
+    Augment audio data by shifting the time in the file. Signal can be shifted
     to the left or right.
 
     Note:

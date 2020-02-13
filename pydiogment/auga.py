@@ -72,7 +72,7 @@ def add_noise(infile, snr):
     # normalize signal
     y /= np.mean(np.abs(y))
 
-    # export data to file
+    # construct file names
     input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_%s_noisy.wav" % snr
@@ -97,7 +97,7 @@ def fade_in_and_out(infile):
     kernel = 0.5**np.arange(len(sig))
     window = np.hamming(len(sig))
 
-    # export data to file
+    # construct file names
     input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_fade_in_out.wav"
