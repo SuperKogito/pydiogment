@@ -72,7 +72,7 @@ def add_noise(infile, snr):
     # normalize signal
     y /= np.mean(np.abs(y))
 
-    # contruct file names
+    # construct file names
     input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_%s_noisy.wav" % snr
