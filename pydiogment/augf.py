@@ -14,7 +14,7 @@ from .io import read_file, write_file
 
 def convolve(infile, ir_name, level=0.5):
     """
-    apply convolution to infile using impulse response given impulse response file.
+    apply convolution to infile using the given impulse response file.
 
     Args:
         infile  (str) : input filename/path.
@@ -48,7 +48,7 @@ def convolve(infile, ir_name, level=0.5):
 
 def change_tone(infile, tone):
     """
-    change the tone of an audi file.
+    change the tone of an audio file.
 
     Args:
         infile (str) : input audio filename.
