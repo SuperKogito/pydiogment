@@ -49,7 +49,7 @@ def run_classification_experiment(x_train, x_test, y_train, y_test,
         # predict data
         y_pred = clf.predict(x_test)
         target_names = data.emotion.unique()
-        #print(classification_report(y_test, y_pred, target_names=target_names))
+        print(classification_report(y_test, y_pred, target_names=target_names))
         
         # compute accuraccies and confusion matrix
         accuracy = metrics.accuracy_score(y_test, y_pred)
@@ -134,7 +134,8 @@ if __name__ == "__main__":
     
     # data from from augmented german files
     Y = X[X['file_name'].str.contains("augment") | X['file_name'].str.contains("no_silence")]
-    
+    Conv = Y[Y['file_name'].str.contains("convolv")]
+
     # common df
     c = pd.merge(X, Y, how='inner', on=['file_name'])
     
