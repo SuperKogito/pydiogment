@@ -1,6 +1,7 @@
 """
 - Description: amplitude based augmentation techniques/manipulations for audio data.
-- Author: Ayoub Malek
+rms_normalization = https://www.hackaudio.com/digital-signal-processing/amplitude/rms-normalization/
+https://samplecraze.com/2019/01/03/normalisation-peak-and-rms/
 """
 import os
 import math
@@ -9,6 +10,7 @@ import tempfile
 import warnings
 import subprocess
 import numpy as np
+from scipy.signal import resample
 from .augt import eliminate_silence
 from .io import read_file, write_file
 
@@ -112,4 +114,78 @@ def fade_in_and_out(infile):
                input_file_name=infile,
                name_attribute=name_attribute,
                sig=augmented_sig,
+               fs=fs)
+
+
+def normalize(infile, normalization_technique="peak", rms_level=0):
+    """
+    normalize the signal given a certain technique (peak or rms).
+
+    Args:
+        infile                  (str) : input filename/path.
+        normalization_technique (str) : type of normalization technique to use.
+                                        default is peak
+        rms_level               (int) : rms level in dB.
+    """
+    # read input file
+    fs, sig = read_file(filename=infile)
+
+    # normalize signal
+    if normalization_technique == "peak" :
+        y = sig / np.max(sig)
+
+    elif normalization_technique == "rms":
+        # compute rms values
+        rms_sig = np.sqrt(np.sum(sig**2) / len(sig))
+
+        # linear rms level and scaling factor
+        r = 10**(level / 20.0)
+        a = np.sqrt( (len(sig) * r**2) / np.sum(sig**2) )
+
+        # normalize
+        y = sig * a
+
+    else :
+        print("ParameterError: Unknown normalization_technique variable.")
+
+    # construct file names
+    input_file_name = os.path.basename(infile).split(".wav")[0]
+    output_file_path = os.path.dirname(infile)
+    name_attribute = "_augmented_{}_normalized.wav".format(normalization_technique)
+
+    # export data to file
+    write_file(output_file_path=output_file_path,
+               input_file_name=infile,
+               name_attribute=name_attribute,
+               sig=y,
+               fs=fs)
+
+
+def resample(infile, sr):
+    """
+    normalize the signal given a certain technique (peak or rms).
+
+    Args:
+        infile (str) : input filename/path.
+        sr     (int) : new sampling rate.
+    """
+    # read input file
+    fs, sig = read_file(filename=infile)
+
+    # compute the number of samples
+    number_of_samples = np.floor((sr / fs) * len(x))
+
+    # resample signal
+    y = resample(sig, number_of_samples)
+
+    # construct file names
+    input_file_name = os.path.basename(infile).split(".wav")[0]
+    output_file_path = os.path.dirname(infile)
+    name_attribute = "_augmented_resampled_with_{}.wav".format(sr)
+
+    # export data to file
+    write_file(output_file_path=output_file_path,
+               input_file_name=infile,
+               name_attribute=name_attribute,
+               sig=y,
                fs=fs)
