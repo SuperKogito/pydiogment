@@ -1,6 +1,5 @@
 """
 Description: write and read module for wave data.
-Author: Ayoub Malek
 """
 import os
 from scipy.io.wavfile import read, write
