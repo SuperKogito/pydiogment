@@ -1,6 +1,5 @@
 """
 - Description: time based augmentation techniques/manipulations for audio data.
-- Author: Ayoub Malek
 """
 import os
 import math
