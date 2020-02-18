@@ -139,7 +139,7 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
         rms_sig = np.sqrt(np.sum(sig**2) / len(sig))
 
         # linear rms level and scaling factor
-        r = 10**(level / 20.0)
+        r = 10**(rms_level / 20.0)
         a = np.sqrt( (len(sig) * r**2) / np.sum(sig**2) )
 
         # normalize
