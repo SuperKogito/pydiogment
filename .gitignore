@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# models 
+paper/experiment/models
+paper/experiment/data
+
