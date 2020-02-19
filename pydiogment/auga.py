@@ -4,14 +4,8 @@ rms_normalization = https://www.hackaudio.com/digital-signal-processing/amplitud
 https://samplecraze.com/2019/01/03/normalisation-peak-and-rms/
 """
 import os
-import math
-import random
-import tempfile
-import warnings
-import subprocess
 import numpy as np
 from scipy.signal import resample
-from .augt import eliminate_silence
 from .io import read_file, write_file
 
 
@@ -28,7 +22,7 @@ def apply_gain(infile, gain):
 
     # apply gain
     x = np.copy(x)
-    x = x * (10**(gain / 20.0))
+    x = x * (10**(gain / 10.0))
     x = np.minimum(np.maximum(-1.0, x), 1.0)
     x /= np.mean(np.abs(x))
 
@@ -43,7 +37,7 @@ def apply_gain(infile, gain):
                fs=fs)
 
 
-def add_noise(infile, snr):
+def add_noise(infile, snr, normalize):
     """
     augment data using noise injection.
 
@@ -60,19 +54,16 @@ def add_noise(infile, snr):
     # compute and apply noise
     noise = np.random.randn(len(sig))
 
-    # compute rms
-    rms_noise = np.sqrt(np.mean(np.power(noise, 2)))
-    rms_sig = np.sqrt(np.mean(np.power(sig, 2)))
+    # compute powers
+    noise_power = np.mean(np.power(noise, 2))
+    sig_power = np.mean(np.power(sig, 2))
 
-    snr_linear = 10**(snr / 20.0)
-    noise_factor = (rms_sig / rms_noise) * snr_linear
-
-    y = sig + noise * noise_factor
-    rms_y = np.sqrt(np.mean(np.power(y, 2)))
-    y = y * rms_sig / rms_y
-
-    # normalize signal
-    y /= np.mean(np.abs(y))
+    # compute snr and scaling factor   
+    snr_linear = 10**(snr / 10.0)
+    noise_factor = (sig_power / noise_power) * (1 / snr_linear)
+    
+    # add noise
+    y = sig + np.sqrt(noise) * noise_factor
 
     # construct file names
     input_file_name = os.path.basename(infile)
@@ -96,7 +87,6 @@ def fade_in_and_out(infile):
     """
     # read input file
     fs, sig = read_file(filename=infile)
-    kernel = 0.5**np.arange(len(sig))
     window = np.hamming(len(sig))
 
     # construct file names
@@ -135,11 +125,8 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
         y = sig / np.max(sig)
 
     elif normalization_technique == "rms":
-        # compute rms values
-        rms_sig = np.sqrt(np.sum(sig**2) / len(sig))
-
         # linear rms level and scaling factor
-        r = 10**(rms_level / 20.0)
+        r = 10**(rms_level / 10.0)
         a = np.sqrt( (len(sig) * r**2) / np.sum(sig**2) )
 
         # normalize
@@ -161,7 +148,7 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
                fs=fs)
 
 
-def resample(infile, sr):
+def resample_audio(infile, sr):
     """
     normalize the signal given a certain technique (peak or rms).
 
@@ -173,7 +160,7 @@ def resample(infile, sr):
     fs, sig = read_file(filename=infile)
 
     # compute the number of samples
-    number_of_samples = np.floor((sr / fs) * len(x))
+    number_of_samples = np.floor((sr / fs) * len(sig))
 
     # resample signal
     y = resample(sig, number_of_samples)

@@ -4,7 +4,6 @@
 import os
 import math
 import random
-import tempfile
 import warnings
 import subprocess
 import numpy as np
