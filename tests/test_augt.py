@@ -4,7 +4,21 @@
 import os
 import time
 import pytest
-from pydiogment.augt import slow_down, speed, random_cropping, shift_time
+from pydiogment.augt import (slow_down, speed, random_cropping, shift_time,
+                             resample_audio, eliminate_silence, reverse)
+
+
+@pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
+def test_eliminate_silence(test_file):
+    """
+    test function for the silence removal.
+    """
+    eliminate_silence(test_file)
+
+    # check result
+    fname = test_file.split(".wav")[0] + "_augmented_without_silence.wav"
+    time.sleep(1)
+    assert(os.path.isfile(fname))
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -47,4 +61,32 @@ def test_shift_time(test_file, tshift, direction):
 
     # check result
     fname = "%s_augmented_%s_%s_shifted.wav" % (test_file.split(".wav")[0], direction, tshift)
+    assert(os.path.isfile(fname))
+
+
+@pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
+def test_reverse(test_file):
+    """
+    test function for the reversing function.
+    """
+    reverse(test_file)
+
+    # check result
+    fname = "{0}_augmented_reversed.wav".format(test_file.split(".wav")[0])
+    time.sleep(1)
+    assert(os.path.isfile(fname))
+
+
+@pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
+@pytest.mark.parametrize('sr', [4000, 6000, 9000, 16000])
+def test_resample_audio(test_file, sr):
+    """
+    test function for the resampling function.
+    """
+    resample_audio(test_file, sr)
+
+    # check result
+    fname = "{0}_augmented_resampled_to_{1}.wav".format(test_file.split(".wav")[0],
+                                                         sr)
+    time.sleep(1)
     assert(os.path.isfile(fname))
