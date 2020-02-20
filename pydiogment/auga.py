@@ -6,7 +6,7 @@ https://samplecraze.com/2019/01/03/normalisation-peak-and-rms/
 import os
 import numpy as np
 from scipy.signal import resample
-from .io import read_file, write_file
+from .utils.io import read_file, write_file
 
 
 def apply_gain(infile, gain):
@@ -37,7 +37,7 @@ def apply_gain(infile, gain):
                fs=fs)
 
 
-def add_noise(infile, snr, normalize):
+def add_noise(infile, snr):
     """
     augment data using noise injection.
 
@@ -58,10 +58,10 @@ def add_noise(infile, snr, normalize):
     noise_power = np.mean(np.power(noise, 2))
     sig_power = np.mean(np.power(sig, 2))
 
-    # compute snr and scaling factor   
+    # compute snr and scaling factor
     snr_linear = 10**(snr / 10.0)
     noise_factor = (sig_power / noise_power) * (1 / snr_linear)
-    
+
     # add noise
     y = sig + np.sqrt(noise) * noise_factor
 
@@ -139,36 +139,6 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
     input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_{}_normalized.wav".format(normalization_technique)
-
-    # export data to file
-    write_file(output_file_path=output_file_path,
-               input_file_name=infile,
-               name_attribute=name_attribute,
-               sig=y,
-               fs=fs)
-
-
-def resample_audio(infile, sr):
-    """
-    normalize the signal given a certain technique (peak or rms).
-
-    Args:
-        infile (str) : input filename/path.
-        sr     (int) : new sampling rate.
-    """
-    # read input file
-    fs, sig = read_file(filename=infile)
-
-    # compute the number of samples
-    number_of_samples = np.floor((sr / fs) * len(sig))
-
-    # resample signal
-    y = resample(sig, number_of_samples)
-
-    # construct file names
-    input_file_name = os.path.basename(infile).split(".wav")[0]
-    output_file_path = os.path.dirname(infile)
-    name_attribute = "_augmented_resampled_with_{}.wav".format(sr)
 
     # export data to file
     write_file(output_file_path=output_file_path,

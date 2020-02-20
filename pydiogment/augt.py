@@ -7,39 +7,36 @@ import random
 import warnings
 import subprocess
 import numpy as np
-from .io import read_file, write_file
+from .utils.io import read_file, write_file
 
 
-def eliminate_silence(input_path, output_path=None):
+def eliminate_silence(infile):
     """
     Eliminate silence from voice file using ffmpeg library.
 
     Args:
-        input_path  (str) : Path to get the original voice file from.
-        output_path (str) : Path to save the processed file to.
+        infile  (str) : Path to get the original voice file from.
 
     Returns:
-
         list including True for successful authentication, False otherwise and
         a percentage value representing the certainty of the decision.
     """
     # define output name if none specified
-    if output_path == None:
-        output_path = input_path.split(".wav")[0] + "_augmented_without_silence.wav"
+    output_path = infile.split(".wav")[0] + "_augmented_without_silence.wav"
 
     # filter silence in wav
-    remove_silence_command = ["ffmpeg", "-i", input_path,
+    remove_silence_command = ["ffmpeg", "-i", infile,
                               "-af",
                               "silenceremove=stop_periods=-1:stop_duration=0.25:stop_threshold=-36dB",
                               "-acodec", "pcm_s16le",
-                              "-ac", "1", "-ar", "8000", output_path]
+                              "-ac", "1", output_path]
     out = subprocess.Popen(remove_silence_command,
                            stdout=subprocess.PIPE,
                            stderr=subprocess.PIPE)
     out.wait()
 
     with_silence_duration = os.popen(
-        "ffprobe -i '" + input_path +
+        "ffprobe -i '" + infile +
         "' -show_format -v quiet | sed -n 's/duration=//p'").read()
     no_silence_duration = os.popen(
         "ffprobe -i '" + output_path +
@@ -98,13 +95,17 @@ def slow_down(input_file, coefficient=0.8):
 
     # apply slowing command
     slowing_command = ["ffmpeg", "-i", input_file, "-filter:a",
-                      '"atempo=' + str(coefficient) + '"',
+                       "atempo={0}".format(str(coefficient)),
                        output_file]
     print(" ".join(slowing_command))
-    _ = subprocess.Popen(slowing_command,
+    p = subprocess.Popen(slowing_command,
                          stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
+    output, error = p.communicate()
+    print(output, error.decode("utf-8") )
+    
+    # for i in error.decode("utf-8") : print(i)
     print("Writing data to " + output_file + ".")
 
 
@@ -122,7 +123,7 @@ def speed(input_file, coefficient=1.25):
 
     # apply slowing command
     speeding_command = ["ffmpeg", "-i", input_file, "-filter:a",
-                        '"atempo=' + str(coefficient) + '"',
+                        "atempo={0}".format(str(coefficient)),
                         output_file]
     _ = subprocess.Popen(speeding_command,
                          stdin=subprocess.PIPE,
@@ -188,3 +189,45 @@ def reverse(infile):
                name_attribute=name_attribute,
                sig=augmented_sig,
                fs=fs)
+
+
+
+def resample_audio(infile, sr):
+    """
+    resample the signal according a new input sampling rate with respect to the
+    Nyquist-Shannon theorem.
+
+    Args:
+        infile (str) : input filename/path.
+        sr     (int) : new sampling rate.
+    """
+    # set-up variables for paths and file names
+    output_file = "{0}_augmented_resampled_to_{1}.wav".format(infile.split(".wav")[0],
+                                                            sr)
+
+    # apply slowing command
+    sampling_command = ["ffmpeg", "-i", infile, "-ar", str(sr), output_file]
+    print(" ".join(sampling_command))
+    out = subprocess.Popen(sampling_command,
+                           stdout=subprocess.PIPE,
+                           stderr=subprocess.PIPE)
+    # # read input file
+    # fs, sig = read_file(filename=infile)
+    #
+    # # compute the number of samples
+    # number_of_samples = np.floor((sr / fs) * len(sig))
+    #
+    # # resample signal
+    # y = resample(sig, number_of_samples)
+    #
+    # # construct file names
+    # input_file_name = os.path.basename(infile).split(".wav")[0]
+    # output_file_path = os.path.dirname(infile)
+    # name_attribute = "_augmented_resampled_with_{}.wav".format(sr)
+    #
+    # # export data to file
+    # write_file(output_file_path=output_file_path,
+    #            input_file_name=infile,
+    #            name_attribute=name_attribute,
+    #            sig=y,
+    #            fs=fs)
