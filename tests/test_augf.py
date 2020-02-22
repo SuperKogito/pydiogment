@@ -36,7 +36,7 @@ def test_change_tone(test_file, tone):
 
     # check result
     fname = "%s_augmented_%s_toned.wav" % (test_file.split(".wav")[0], str(tone))
-    time.sleep(1)
+    time.sleep(5)
     assert(os.path.isfile(fname))
 
 
