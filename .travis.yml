@@ -20,7 +20,7 @@ before_script:
   - pip3 install pytest-xdist
   - pip3 install codacy-coverage
   - sudo apt-get update
-  - pip3 install -r requuirements.txt
+  - pip3 install -r requirements.txt
   - sudo apt install ffmpeg
 
 # command to run tests
