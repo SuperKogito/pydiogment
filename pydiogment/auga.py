@@ -12,8 +12,8 @@ def apply_gain(infile, gain):
     apply gain to infile.
 
     Args:
-        infile (str) : input filename/path.
-        gain (float) : gain in dB (both positive and negative).
+        - infile (str) : input filename/path.
+        - gain (float) : gain in dB (both positive and negative).
     """
     # read input file
     fs, x = read_file(filename=infile)
@@ -43,8 +43,8 @@ def add_noise(infile, snr):
         It simply add some random values to the input file data based on the snr.
 
     Args:
-        infile (str) : input filename/path.
-        snr    (int) : signal to noise ratio in dB.
+        - infile (str) : input filename/path.
+        - snr    (int) : signal to noise ratio in dB.
     """
     # read input file
     fs, sig = read_file(filename=infile)
@@ -81,7 +81,7 @@ def fade_in_and_out(infile):
     add a fade in and out effect to the audio file.
 
     Args:
-        infile (str) : input filename/path.
+        - infile (str) : input filename/path.
     """
     # read input file
     fs, sig = read_file(filename=infile)

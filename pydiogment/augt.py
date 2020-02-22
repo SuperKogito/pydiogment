@@ -15,7 +15,7 @@ def eliminate_silence(infile):
     Eliminate silence from voice file using ffmpeg library.
 
     Args:
-        infile  (str) : Path to get the original voice file from.
+        - infile  (str) : Path to get the original voice file from.
 
     Returns:
         list including True for successful authentication, False otherwise and
@@ -49,8 +49,8 @@ def random_cropping(infile, min_len=1):
     Crop the infile with an input minimum duration.
 
     Args:
-        infile    (str) : Input filename.
-        min_len (float) : Minimum duration for randomly cropped excerpt
+        - infile    (str) : Input filename.
+        - min_len (float) : Minimum duration for randomly cropped excerpt
     """
     fs, x = read_file(filename=infile)
     t_end = x.size / fs
@@ -86,8 +86,8 @@ def slow_down(input_file, coefficient=0.8):
     Slow or stretch a wave.
 
     Args:
-        infile        (str) : Input filename.
-        coefficient (float) : coefficient caracterising the slowing degree.
+        - infile        (str) : Input filename.
+        - coefficient (float) : coefficient caracterising the slowing degree.
     """
     # set-up variables for paths and file names
     name_attribute = "_augmented_slowed.wav"
@@ -114,8 +114,8 @@ def speed(input_file, coefficient=1.25):
     Speed or shrink a wave.
 
     Args:
-        infile        (str) : Input filename.
-        coefficient (float) : coefficient caracterising the speeding degree.
+        - infile        (str) : Input filename.
+        - coefficient (float) : coefficient caracterising the speeding degree.
     """
     # set-up variables for paths and file names
     name_attribute = "_augmented_speeded.wav"
@@ -143,9 +143,9 @@ def shift_time(infile, tshift, direction):
         If shifting audio to right (back forward) with x seconds, last x seconds will mark as 0 (i.e. silence).
 
     Args:
-        infile    (str) : Input filename.
-        tshift    (int) : Signal time shift in seconds.
-        direction (str) : shift direction (to the left or right).
+        - infile    (str) : Input filename.
+        - tshift    (int) : Signal time shift in seconds.
+        - direction (str) : shift direction (to the left or right).
     """
     fs, sig = read_file(filename=infile)
     shift = int(tshift * fs) * int(direction == "left") - \
@@ -173,7 +173,7 @@ def reverse(infile):
     to an output file
 
     Args:
-        infile (str): Input filename.
+        - infile (str): Input filename.
     """
     fs, sig = read_file(filename=infile)
     augmented_sig = sig[::-1]
@@ -198,8 +198,8 @@ def resample_audio(infile, sr):
     Nyquist-Shannon theorem.
 
     Args:
-        infile (str) : input filename/path.
-        sr     (int) : new sampling rate.
+        - infile (str) : input filename/path.
+        - sr     (int) : new sampling rate.
     """
     # set-up variables for paths and file names
     output_file = "{0}_augmented_resampled_to_{1}.wav".format(infile.split(".wav")[0],
