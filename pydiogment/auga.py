@@ -1,7 +1,5 @@
 """
 - Description: amplitude based augmentation techniques/manipulations for audio data.
-rms_normalization = https://www.hackaudio.com/digital-signal-processing/amplitude/rms-normalization/
-https://samplecraze.com/2019/01/03/normalisation-peak-and-rms/
 """
 import os
 import numpy as np
@@ -112,10 +110,9 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
     normalize the signal given a certain technique (peak or rms).
 
     Args:
-        infile                  (str) : input filename/path.
-        normalization_technique (str) : type of normalization technique to use.
-                                        default is peak
-        rms_level               (int) : rms level in dB.
+        - infile                  (str) : input filename/path.
+        - normalization_technique (str) : type of normalization technique to use. (default is peak)
+        - rms_level               (int) : rms level in dB.
     """
     # read input file
     fs, sig = read_file(filename=infile)
