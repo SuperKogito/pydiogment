@@ -13,8 +13,8 @@ requires = ["numpy>=1.17.2", "scipy>=1.3.1"]
 setup (
         name         = 'pydiogment',
         version      = '0.1.0',
-        author       = 'SuperKogito',
-        author_email = 'superkogito@gmail.com',
+        author       = 'SuperKogito, HMMalek',
+        author_email = 'superkogito@gmail.com, hasna.m.malek@gmail.com',
         description  = 'Python audio augmentation',
         long_description = readme,
         long_description_content_type = "text/markdown",
