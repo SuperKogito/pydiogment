@@ -5,7 +5,7 @@
 pydiogment
 ==========
 
-[![Build Status](https://travis-ci.org/SuperKogito/pydiogment.svg?branch=master)](https://travis-ci.org/SuperKogito/pydiogment) [![Documentation Status](https://readthedocs.org/projects/pydiogment/badge/?version=latest)](https://pydiogment.readthedocs.io/en/latest/?badge=latest) [![License](https://img.shields.io/badge/license-BSD%203--Clause%20License%20(Revised)%20-blue)](https://github.com/SuperKogito/pydiogment/blob/master/LICENSE) [![Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue)](https://www.python.org/doc/versions/) [![Coverage Status](https://coveralls.io/repos/github/SuperKogito/pydiogment/badge.svg?branch=master)](https://coveralls.io/github/SuperKogito/pydiogment?branch=master)
+[![Build Status](https://travis-ci.org/SuperKogito/pydiogment.svg?branch=master)](https://travis-ci.org/SuperKogito/pydiogment) [![Documentation Status](https://pydiogment.readthedocs.io/en/latest/index.html)](https://pydiogment.readthedocs.io/en/latest/?badge=latest) [![License](https://img.shields.io/badge/license-BSD%203--Clause%20License%20(Revised)%20-blue)](https://github.com/SuperKogito/pydiogment/blob/master/LICENSE) [![Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue)](https://www.python.org/doc/versions/) [![Coverage Status](https://coveralls.io/repos/github/SuperKogito/pydiogment/badge.svg?branch=master)](https://coveralls.io/github/SuperKogito/pydiogment?branch=master)
 
 pydiogment aims to simplify audio augmentation. It generates multiple audio files based on a starting mono audio file. The library can generates files with higher speed, slower, and different tones etc.
 
@@ -31,7 +31,7 @@ pydiogment requires:
 
 
 Installation
------------------
+-------------
 
 If you already have a working installation of numpy and scipy, you can simply install pydiogment using pip:
 
@@ -106,7 +106,9 @@ How to use
     shift_time(test_file, 1,"left")
     ```
 
-
+Documentation
+==============
+A thorough documentation of the library is available under [pydiogment.readthedocs.io](https://pydiogment.readthedocs.io/en/latest/index.html).
 
 Contributing
 ============
