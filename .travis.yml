@@ -20,6 +20,7 @@ before_script:
   - pip3 install pytest==3.6.0
   - pip3 install codacy-coverage
   - sudo apt-get update
+  - pip3 install matplotlib
   - pip3 install -r requirements.txt
   - sudo apt install ffmpeg
 
