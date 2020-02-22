@@ -30,19 +30,13 @@ pydiogment requires:
 
 
 
-User installation
+Installation
 -----------------
 
 If you already have a working installation of numpy and scipy, you can simply install pydiogment using pip:
 
 ```
 pip install -U pydiogment
-```
-
-or conda (*not available at the moment*\):
-
-```
-conda install pydiogment
 ```
 
 How to use
