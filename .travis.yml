@@ -14,10 +14,11 @@ before_script:
   - sudo apt-get install python3-pip
   - sudo apt-get install python3-setuptools
   - pip3 install --upgrade setuptools
+  - pip3 install pytest
   - pip3 install pytest-cov pytest
   - pip3 install codecov
   - pip3 install coveralls
-  - pip3 install pytest
+  - pip3 install pytest-xdist
   - pip3 install codacy-coverage
   - sudo apt-get update
   - pip3 install matplotlib
@@ -26,8 +27,8 @@ before_script:
 
 # command to run tests
 script:
-  - pytest -v
-
+  - pytest --cache-clear -n 8 -q --cov=./ || --force-yes
+  
 after_success:
   - codecov
   - coveralls
