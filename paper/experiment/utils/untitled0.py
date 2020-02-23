@@ -5,25 +5,25 @@ def SNR_Set(sig, Desired_SNR_dB):
     """
    #  Filename SNR_Set_test.m
    #
-   #  Tests the 'SNR_Set()" function.  Adds a predefined 
-   #  amount of random noise to a noise-free signal such that  
+   #  Tests the 'SNR_Set()" function.  Adds a predefined
+   #  amount of random noise to a noise-free signal such that
    #  the noisy signal has a desired signal-to-noise ratio (SNR).
    #
    #  Author: Richard Lyons [December 2011]
     """
     len_sig = len(sig)
     noise   = np.random.randn(len_sig)
-    
+
     sig_pow   = np.mean(sig**2)
     noise_pow = np.mean(noise**2)
     Initial_SNR = 10*(np.log10(sig_pow/noise_pow))
-    
+
     K = (sig_pow/noise_pow) * 10**(-Desired_SNR_dB/10) # Scale factor
-    
+
     New_Noise = np.sqrt(K)*noise # Change Noise level
     New_Noise_Power = np.mean(New_Noise**2)
     New_SNR = 10*(np.log10(sig_pow/New_Noise_Power))
-    
+
     print(Initial_SNR, New_SNR)
     Noisy_Signal = sig + New_Noise
     return Noisy_Signal
