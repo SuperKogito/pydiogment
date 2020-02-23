@@ -9,8 +9,8 @@ pydiogment
 
 pydiogment aims to simplify audio augmentation. It generates multiple audio files based on a starting mono audio file. The library can generates files with higher speed, slower, and different tones etc.
 
-Installation
-============
+<img src="ins.png">  Installation
+                     ============
 
 Dependencies
 ------------
@@ -39,8 +39,8 @@ If you already have a working installation of numpy and scipy, you can simply in
 pip install -U pydiogment
 ```
 
-How to use
-==========
+<img src="how.png">  How to use
+                     ==========
 
 - ## Amplitude related augmentation
   - ### Apply a fade in and fade out effect
@@ -106,16 +106,16 @@ How to use
     shift_time(test_file, 1,"left")
     ```
 
-Documentation
-==============
+<img src="doc.png">  Documentation
+                     ==============
 A thorough documentation of the library is available under [pydiogment.readthedocs.io](https://pydiogment.readthedocs.io/en/latest/index.html).
 
-Contributing
-============
+<img src="cont.png">  Contributing
+                      ============
 
 Contributions are welcome and encouraged. To learn more about how to contribute to pydiogment please refer to the [Contributing guidelines](https://github.com/SuperKogito/pydiogment/blob/master/CONTRIBUTING.md)
 
 
-Acknowledgment and credits
-============================
+<img src="ack.png">  Acknowledgment and credits
+                    ============================
 - The test file used in the pytests is [OSR_us_000_0060_8k.wav](https://www.voiptroubleshooter.com/open_speech/american/OSR_us_000_0060_8k.wav) from the [Open Speech Repository](https://www.voiptroubleshooter.com/open_speech/american.html).
