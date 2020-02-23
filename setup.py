@@ -12,7 +12,7 @@ requires = ["numpy>=1.17.2", "scipy>=1.3.1"]
 
 setup (
         name         = 'pydiogment',
-        version      = '0.0.1',
+        version      = '0.0.2',
         author       = 'SuperKogito, HMMalek',
         author_email = 'superkogito@gmail.com, hasna.m.malek@gmail.com',
         description  = 'Python audio augmentation',
