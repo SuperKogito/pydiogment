@@ -63,3 +63,7 @@ def prepare_data(zip_url = "http://emodb.bilderbar.info/download/download.zip"):
     manage("wav/", "data/waves/")
     _ = subprocess.Popen(["rm", "-rf", "wav"], stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+
+if __name__ == "__main__":
+    prepare_data()
