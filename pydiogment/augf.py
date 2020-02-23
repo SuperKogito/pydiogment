@@ -22,8 +22,7 @@ def convolve(infile, ir_fname, level=0.5):
     x = np.copy(x)
 
     # change the path below for the sounds folder
-    ir_path = 'pydiogment/sounds/{0}.wav'.format(ir_fname)
-    fs2, ir = read_file(filename=ir_path)
+    fs2, ir = read_file(filename=ir_fname)
 
     # apply convolution
     y = np.convolve(x, ir, 'full')[0:x.shape[0]] * level + x * (1 - level)
@@ -34,7 +33,8 @@ def convolve(infile, ir_fname, level=0.5):
     # export data to file
     input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
-    name_attribute = "_augmented_{0}_convolved_with_level_{1}.wav".format(ir_fname, level)
+    name_attribute = "_augmented_{0}_convolved_with_level_{1}.wav".format(os.path.basename(ir_fname.split(".")[0]),
+                                                                          level)
     write_file(output_file_path=output_file_path,
                input_file_name=infile,
                name_attribute=name_attribute,

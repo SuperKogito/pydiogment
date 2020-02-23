@@ -8,7 +8,7 @@ from pydiogment.augf import convolve, change_tone, apply_filter
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
-@pytest.mark.parametrize('ir_fname', ['tel_noise'])
+@pytest.mark.parametrize('ir_fname', ['tests/testfiles/tel_noise.wav'])
 @pytest.mark.parametrize('level', [0.5, 0.25, 0.01])
 def test_convolve(test_file, ir_fname, level):
     """
@@ -19,7 +19,7 @@ def test_convolve(test_file, ir_fname, level):
 
     # check result
     fname = "{0}_augmented_{1}_convolved_with_level_{2}.wav".format(test_file.split(".wav")[0],
-                                                                    ir_fname,
+                                                                    os.path.basename(ir_fname.split(".")[0]),
                                                                     level)
     time.sleep(1)
     assert(os.path.isfile(fname))
