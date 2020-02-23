@@ -39,7 +39,7 @@ If you already have a working installation of numpy and scipy, you can simply in
 pip install -U pydiogment
 ```
 
-<img src="icons/how.png">  How to use
+<img src="icons/how.png" width="30">  How to use
 ==========
 
 - ## Amplitude related augmentation
