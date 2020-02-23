@@ -41,14 +41,14 @@ def get_data(file_path, drop_columns=True, drop_nans=True):
 def balance_dataset(data):
     # define column names
     column_names = list(data.columns)
-    
+
     # assert equal number o samples per class
     samples_pro_emotion = {e: len(data[data.emotion == e]) for e in data.emotion.unique()}
-    balanced_data = pd.concat([data[data.emotion == e].sample(min(samples_pro_emotion.values())) 
+    balanced_data = pd.concat([data[data.emotion == e].sample(min(samples_pro_emotion.values()))
                                for e in data.emotion.unique()],
-                               axis=0, 
+                               axis=0,
                                keys=list(data.columns))
-    
+
     # split data
     X = balanced_data.iloc[:, :-1]
     y = balanced_data.iloc[:, -1:].astype('category')

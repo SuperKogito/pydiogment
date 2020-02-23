@@ -104,7 +104,7 @@ def slow_down(input_file, coefficient=0.8):
                          stderr=subprocess.PIPE)
     output, error = p.communicate()
     print(output, error.decode("utf-8") )
-    
+
     # for i in error.decode("utf-8") : print(i)
     print("Writing data to " + output_file + ".")
 

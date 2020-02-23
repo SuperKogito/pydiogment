@@ -12,7 +12,7 @@ from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
 from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, ExtraTreesClassifier
 
-# init glabal variables 
+# init glabal variables
 n_jobs = mp.cpu_count()
 kernel = 1.0 * RBF(1.0)
 
@@ -27,7 +27,7 @@ classifiers = {
                                      metric='minkowski',
                                      metric_params=None,
                                      n_jobs=n_jobs),
-                                     
+
                 "K-Nearest Neighbors (uniform weights)":
                 KNeighborsClassifier(n_neighbors=5,
                                      weights='uniform',
@@ -37,7 +37,7 @@ classifiers = {
                                      metric='minkowski',
                                      metric_params=None,
                                      n_jobs=n_jobs),
-                                                                               
+
                 "Gaussian Process":
                 GaussianProcessClassifier(kernel=None,
                                           optimizer='fmin_l_bfgs_b',
@@ -48,7 +48,7 @@ classifiers = {
                                           random_state=random.seed(42),
                                           multi_class='one_vs_rest',
                                           n_jobs=n_jobs),
-                                          
+
                 "Decision Tree":
                 DecisionTreeClassifier(criterion='gini',
                                        splitter='best',
@@ -63,7 +63,7 @@ classifiers = {
                                        min_impurity_split=None,
                                        class_weight=None,
                                        presort='deprecated'),
-                                       
+
                 "Random Forest":
                 RandomForestClassifier(n_estimators=100,
                                        criterion='gini',
@@ -82,14 +82,14 @@ classifiers = {
                                        verbose=0,
                                        warm_start=False,
                                        class_weight=None),
-                                       
+
                 "AdaBoost":
                 AdaBoostClassifier(base_estimator=None,
                                    n_estimators=100,
                                    learning_rate=1.0,
                                    algorithm='SAMME.R',
                                    random_state=random.seed(42)),
-                                   
+
                 "Naive Bayes":
                 GaussianNB(priors=None, var_smoothing=1e-09),
                 "Quadratic Discriminant Analysis":
@@ -97,7 +97,7 @@ classifiers = {
                                               reg_param=0.0,
                                               store_covariance=False,
                                               tol=0.0001),
-                                              
+
                 "Linear SVM":
                 SVC(C=0.025,
                     kernel='linear',
@@ -113,7 +113,7 @@ classifiers = {
                     max_iter=-1,
                     decision_function_shape='ovr',
                     random_state=random.seed(42)),
-                    
+
                 "RBF SVM":
                 SVC(C=0.025,
                     kernel='rbf',
@@ -129,7 +129,7 @@ classifiers = {
                     max_iter=-1,
                     decision_function_shape='ovr',
                     random_state=random.seed(42)),
-                    
+
                 "MLP Classifier":
                 MLPClassifier(hidden_layer_sizes=(100, ),
                               activation='relu',
@@ -153,7 +153,7 @@ classifiers = {
                               beta_2=0.999,
                               epsilon=1e-08,
                               n_iter_no_change=10),
-                              
+
                 "Extra Trees Classifier":
                 ExtraTreesClassifier(n_estimators=100,
                                      criterion='gini',
@@ -172,7 +172,7 @@ classifiers = {
                                      verbose=0,
                                      warm_start=False,
                                      class_weight=None),
-                                     
+
                 "SGD Classifier":
                 SGDClassifier(loss='hinge',
                               penalty='l2',
