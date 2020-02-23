@@ -1,5 +1,5 @@
-pydiogment.io
-=============
+pydiogment.utils.io
+===================
 
 
 .. automodule:: pydiogment.utils.io

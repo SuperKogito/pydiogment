@@ -1,5 +1,5 @@
-pydiogment.filters
-==================
+pydiogment.utils.filters
+========================
 
 
 .. automodule:: pydiogment.utils.filters
