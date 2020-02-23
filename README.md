@@ -39,7 +39,7 @@ If you already have a working installation of numpy and scipy, you can simply in
 pip install -U pydiogment
 ```
 
-How to use  <img src="icons/how.png">
+<img src="icons/how.png">  How to use
 ==========
 
 - ## Amplitude related augmentation
@@ -106,16 +106,16 @@ How to use  <img src="icons/how.png">
     shift_time(test_file, 1,"left")
     ```
 
-Documentation  <img src="icons/doc.png">
+<img src="icons/doc.png">  Documentation  
 ==============
 A thorough documentation of the library is available under [pydiogment.readthedocs.io](https://pydiogment.readthedocs.io/en/latest/index.html).
 
-Contributing        <img src="icons/cont.png">
+<img src="icons/cont.png">  Contributing        
 ============
 
 Contributions are welcome and encouraged. To learn more about how to contribute to pydiogment please refer to the [Contributing guidelines](https://github.com/SuperKogito/pydiogment/blob/master/CONTRIBUTING.md)
 
 
-Acknowledgment and credits     <img src="icons/ack.png">
+<img src="icons/ack.png">  Acknowledgment and credits     
 ============================
 - The test file used in the pytests is [OSR_us_000_0060_8k.wav](https://www.voiptroubleshooter.com/open_speech/american/OSR_us_000_0060_8k.wav) from the [Open Speech Repository](https://www.voiptroubleshooter.com/open_speech/american.html).
