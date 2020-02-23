@@ -8,11 +8,11 @@ from pydiogment.utils.filters import (butter_lowpass, butter_highpass,
 
 
 @pytest.mark.parametrize('fs', [8000.0])
-@pytest.mark.parametrize('low_cutoff_freq', [50.0, 150.0, 300.0])
-@pytest.mark.parametrize('high_cutoff_freq', [1000.0, 2000.0, 3000.0])
+@pytest.mark.parametrize('low_cut', [50.0, 150.0, 300.0])
+@pytest.mark.parametrize('high_cut', [1000.0, 2000.0, 3000.0])
 @pytest.mark.parametrize('filter_type', ["low", "high", "band"])
 @pytest.mark.parametrize('order', [3, 5, 6, 9])
-def test_filters(fs, low_cutoff_freq, high_cutoff_freq, filter_type, order):
+def test_filters(fs, low_cut, high_cut, filter_type, order):
     """
     test function for low, high and bandpass filters.
     """
