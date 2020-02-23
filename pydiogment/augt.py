@@ -194,7 +194,7 @@ def reverse(infile):
 
 def resample_audio(infile, sr):
     """
-    resample the signal according a new input sampling rate with respect to the
+    Resample the signal according a new input sampling rate with respect to the
     Nyquist-Shannon theorem.
 
     Args:

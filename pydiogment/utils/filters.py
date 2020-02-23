@@ -1,5 +1,5 @@
 """
-Description: implements the scipybased Butterworth filters.
+- Description: implements the scipybased Butterworth filters.
 bandpas: https://stackoverflow.com/questions/12093594/how-to-implement-band-pass-butterworth-filter-with-scipy-signal-butter
 highpass: https://stackoverflow.com/questions/39032325/python-high-pass-filter
 """
@@ -10,7 +10,7 @@ from scipy.signal import butter, lfilter, freqz
 
 def butter_lowpass(cutoff, fs, order=5):
     """
-    design lowpass filter.
+    Design lowpass filter.
 
     Args:
         - cutoff (float) : the cutoff frequency of the filter.
@@ -30,7 +30,7 @@ def butter_lowpass(cutoff, fs, order=5):
 
 def butter_highpass(cutoff, fs, order=5):
     """
-    design a highpass filter.
+    Design a highpass filter.
 
     Args:
         - cutoff (float) : the cutoff frequency of the filter.
@@ -50,7 +50,7 @@ def butter_highpass(cutoff, fs, order=5):
 
 def butter_bandpass(low_cut, high_cut, fs, order=5):
     """
-    design band pass filter.
+    Design band pass filter.
 
     Args:
         - low_cut  (float) : the low cutoff frequency of the filter.
@@ -72,7 +72,7 @@ def butter_bandpass(low_cut, high_cut, fs, order=5):
 
 def butter_filter(sig, fs, ftype="low", low_cut=50, high_cut=2000, order=5):
     """
-    apply filter to signal.
+    Apply filter to signal.
 
     Args:
         - sig      (array) : the signal array to filter.

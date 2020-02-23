@@ -9,7 +9,7 @@ from .utils.io import read_file, write_file
 
 def apply_gain(infile, gain):
     """
-    apply gain to infile.
+    Apply gain to infile.
 
     Args:
         - infile (str) : input filename/path.
@@ -37,7 +37,7 @@ def apply_gain(infile, gain):
 
 def add_noise(infile, snr):
     """
-    augment data using noise injection.
+    Augment data using noise injection.
 
     Note:
         It simply add some random values to the input file data based on the snr.
@@ -78,7 +78,7 @@ def add_noise(infile, snr):
 
 def fade_in_and_out(infile):
     """
-    add a fade in and out effect to the audio file.
+    Add a fade in and out effect to the audio file.
 
     Args:
         - infile (str) : input filename/path.
@@ -107,7 +107,7 @@ def fade_in_and_out(infile):
 
 def normalize(infile, normalization_technique="peak", rms_level=0):
     """
-    normalize the signal given a certain technique (peak or rms).
+    Normalize the signal given a certain technique (peak or rms).
 
     Args:
         - infile                  (str) : input filename/path.

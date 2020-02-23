@@ -1,5 +1,5 @@
 """
-Description: write and read module for wave data.
+- Description: write and read module for wave data.
 """
 import os
 from scipy.io.wavfile import read, write
@@ -7,7 +7,7 @@ from scipy.io.wavfile import read, write
 
 def read_file(filename):
     """
-    read wave file as mono.
+    Read wave file as mono.
 
     Args:
         - filename (str) : wave file / path.
@@ -25,7 +25,7 @@ def read_file(filename):
 
 def write_file(output_file_path, input_file_name, name_attribute, sig, fs):
     """
-    read wave file as mono.
+    Read wave file as mono.
 
     Args:
         - filename         (str) : wave file / path.

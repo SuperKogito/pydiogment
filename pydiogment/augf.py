@@ -10,7 +10,7 @@ from .utils.io import read_file, write_file
 
 def convolve(infile, ir_fname, level=0.5):
     """
-    apply convolution to infile using the given impulse response file.
+    Apply convolution to infile using the given impulse response file.
 
     Args:
         - infile   (str) : input filename/path.
@@ -44,7 +44,7 @@ def convolve(infile, ir_fname, level=0.5):
 
 def change_tone(infile, tone):
     """
-    change the tone of an audio file.
+    Change the tone of an audio file.
 
     Args:
         - infile (str) : input audio filename.
@@ -72,7 +72,7 @@ def change_tone(infile, tone):
 
 def apply_filter(infile, filter_type, low_cutoff_freq, high_cutoff_freq=None, order=5):
     """
-    apply a certain type of Buttenworth filter on the input audio.
+    Apply a certain type of Buttenworth filter on the input audio.
 
     Args:
         - infile             (str) : input audio filename.
