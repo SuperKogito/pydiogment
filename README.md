@@ -9,7 +9,7 @@ pydiogment
 
 pydiogment aims to simplify audio augmentation. It generates multiple audio files based on a starting mono audio file. The library can generates files with higher speed, slower, and different tones etc.
 
- <img src="icons/ins.png">  Installation 
+ <img src="icons/ins.png">  Installation
 ============
 
 Dependencies
