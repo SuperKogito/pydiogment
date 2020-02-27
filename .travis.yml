@@ -28,7 +28,7 @@ before_script:
 # command to run tests
 script:
   - pytest --cache-clear -n 8 -q --cov=./ || --force-yes
-  
+
 after_success:
   - codecov
   - coveralls

@@ -1,0 +1,7 @@
+# .coveragerc
+[report]
+show_missing = True
+omit =
+    paper/*
+    setup.py
+    *.md
