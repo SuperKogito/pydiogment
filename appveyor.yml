@@ -1,29 +1,39 @@
-# appveyor.yml
----
+branches:
+  only:
+    - master
+
 environment:
   matrix:
-  - TOXENV: py35
-  - TOXENV: py36
-  - TOXENV: py37
+    - PYTHON_VERSION: 3.5
+      MINICONDA: C:\Miniconda
+    - PYTHON_VERSION: 3.6
+      MINICONDA: C:\Miniconda3
+    - PYTHON_VERSION: 3.7
+      MINICONDA: C:\Miniconda3
 
-build: off
+# We always use a 64-bit machine, but can build x86 distributions
+platform:
+    - x64
+
+init:
+  - "ECHO %PYTHON_VERSION% %MINICONDA%"
 
 install:
-- sudo apt-get update
-- sudo apt-get install python3
-- sudo apt-get install python3-pip
-- sudo apt-get install python3-setuptools
-- pip3 install --upgrade setuptools
-- pip3 install pytest
-- pip3 install pytest-cov pytest
-- pip3 install codecov
-- pip3 install coveralls
-- pip3 install pytest-xdist
-- pip3 install codacy-coverage
-- sudo apt-get update
-- pip3 install matplotlib
-- pip3 install -r requirements.txt
-- sudo apt install ffmpeg
+  - "set PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda info -a
+  - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy scipy nose"
+  - activate test-environment
+  - pip install --upgrade setuptools
+  - pip install pytest
+  - pip install pytest-cov pytest
+  - pip install codecov
+  - pip install coveralls
+  - pip install pytest-xdist
+  - pip install codacy-coverage
+  - pip install matplotlib
+  - pip install -r requirements.txt
 
 test_script:
-- pytest --cache-clear -n 8 -q --cov=./ || --force-yes
+  - pytest --cache-clear -n 8 -q --cov=./ || --force-yes
