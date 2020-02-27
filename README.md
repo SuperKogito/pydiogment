@@ -2,12 +2,12 @@
 <img src="https://github.com/SuperKogito/pydiogment/blob/master/docs/icon.png?raw=true">
 </p>
 
-:bell:	pydiogment
+:bell:	Pydiogment
 ==========
 
 [![Build Status](https://travis-ci.org/SuperKogito/pydiogment.svg?branch=master)](https://travis-ci.org/SuperKogito/pydiogment) [![Documentation Status](https://readthedocs.org/projects/pydiogment/badge/?version=latest)](https://pydiogment.readthedocs.io/en/latest/?badge=latest) [![License](https://img.shields.io/badge/license-BSD%203--Clause%20License%20(Revised)%20-blue)](https://github.com/SuperKogito/pydiogment/blob/master/LICENSE) [![Python](https://img.shields.io/badge/python-3.5%20%7C%203.6%20%7C%203.7-blue)](https://www.python.org/doc/versions/) [![Coverage Status](https://codecov.io/gh/SuperKogito/pydiogment/graph/badge.svg)](https://codecov.io/gh/SuperKogito/pydiogment) [![Coverage Status](https://coveralls.io/repos/github/SuperKogito/pydiogment/badge.svg?branch=master)](https://coveralls.io/github/SuperKogito/pydiogment?branch=master)
 
-pydiogment aims to simplify audio augmentation. It generates multiple audio files based on a starting mono audio file. The library can generates files with higher speed, slower, and different tones etc.
+**Pydiogment** aims to simplify audio augmentation. It generates multiple audio files based on a starting mono audio file. The library can generates files with higher speed, slower, and different tones etc.
 
 :inbox_tray: Installation
 ============
@@ -15,7 +15,7 @@ pydiogment aims to simplify audio augmentation. It generates multiple audio file
 Dependencies
 ------------
 
-pydiogment requires:
+**Pydiogment** requires:
 
 -	[Python](https://www.python.org/download/releases/3.0/) (>= 3.5)  
 -	[NumPy](https://numpy.org/) (>= 1.17.2)
@@ -32,9 +32,12 @@ pydiogment requires:
 
 Installation
 -------------
+If you already have a working installation of [NumPy](https://numpy.org/) and [SciPy](https://www.scipy.org/) , you can simply install **Pydiogment** using pip:
 
-If you already have a working installation of numpy and scipy, you can simply install pydiogment using pip:
-
+```
+pip install pydiogment
+```
+To update an existing version of  **Pydiogment**, use:
 ```
 pip install -U pydiogment
 ```
@@ -85,8 +88,8 @@ pip install -U pydiogment
     from pydiogment.augt import slowdown, speed
 
     test_file = "path/test.wav"
-    slowdown(test_file, coefficient=0.8)
-    speed(test_file, coefficient=1.2)
+    slowdown(test_file, 0.8)
+    speed(test_file, 1.2)
     ```
 
   - ### Apply random cropping to the file
@@ -102,8 +105,8 @@ pip install -U pydiogment
     from pydiogment.augt import shift_time
 
     test_file = "path/test.wav"
-    shift_time(test_file, 1,"right")
-    shift_time(test_file, 1,"left")
+    shift_time(test_file, 1, "right")
+    shift_time(test_file, 1, "left")
     ```
 
 :bookmark_tabs:  Documentation  
@@ -113,7 +116,7 @@ A thorough documentation of the library is available under [pydiogment.readthedo
 :construction_worker:	 Contributing        
 ============
 
-Contributions are welcome and encouraged. To learn more about how to contribute to pydiogment please refer to the [Contributing guidelines](https://github.com/SuperKogito/pydiogment/blob/master/CONTRIBUTING.md)
+Contributions are welcome and encouraged. To learn more about how to contribute to **Pydiogment** please refer to the [Contributing guidelines](https://github.com/SuperKogito/pydiogment/blob/master/CONTRIBUTING.md)
 
 :tada:	Acknowledgment and credits     
 ============================
