@@ -11,9 +11,8 @@ environment:
     - PYTHON_VERSION: 3.7
       MINICONDA: C:\Miniconda3
 
-# We always use a 64-bit machine, but can build x86 distributions
-platform:
-    - x64
+cache:
+    - "%MINICONDA%\\envs -> appveyor.yml, setup.py"
 
 init:
   - "ECHO %PYTHON_VERSION% %MINICONDA%"
@@ -35,5 +34,6 @@ install:
   - pip install matplotlib
   - pip install -r requirements.txt
 
+build: off
 test_script:
-  - pytest --cache-clear -n 8 -q --cov=./ || --force-yes
+  - pytest
