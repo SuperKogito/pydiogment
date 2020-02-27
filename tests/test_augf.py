@@ -12,7 +12,7 @@ from pydiogment.augf import convolve, change_tone, apply_filter
 @pytest.mark.parametrize('level', [0.5, 0.25, 0.01])
 def test_convolve(test_file, ir_fname, level):
     """
-    test the convolution function.
+    Test the convolution function.
     """
     # apply a convolution between the audio input file and a predefined file.
     convolve(infile=test_file, ir_fname=ir_fname, level=level)
@@ -29,7 +29,7 @@ def test_convolve(test_file, ir_fname, level):
 @pytest.mark.parametrize('tone', [0.9, 1.1])
 def test_change_tone(test_file, tone):
     """
-    test the tone changing function.
+    Test the tone changing function.
     """
     # change audio file tone
     change_tone(infile=test_file, tone=tone)
@@ -45,10 +45,9 @@ def test_change_tone(test_file, tone):
 @pytest.mark.parametrize('low_cutoff_freq', [20, 30, 50, 100])
 @pytest.mark.parametrize('high_cutoff_freq', [500, 700, 1200, 1500])
 @pytest.mark.parametrize('order', [3, 5, 9])
-def test_apply_filter(test_file, filter_type, low_cutoff_freq,
-                      high_cutoff_freq, order):
+def test_apply_filter(test_file, filter_type, low_cutoff_freq, high_cutoff_freq, order):
     """
-    test the Buttenworth filters.
+    Test the Buttenworth filters.
     """
     # apply filter
     apply_filter(test_file, filter_type, low_cutoff_freq, high_cutoff_freq, order)

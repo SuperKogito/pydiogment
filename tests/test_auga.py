@@ -11,7 +11,7 @@ from pydiogment.auga import apply_gain, add_noise, fade_in_and_out, normalize
 @pytest.mark.parametrize('gain', [-100, -50, -25])
 def test_apply_gain(test_file, gain):
     """
-    test apply gain function.
+    Test apply gain function.
     """
     apply_gain(infile=test_file, gain=gain)
 
@@ -25,7 +25,7 @@ def test_apply_gain(test_file, gain):
 @pytest.mark.parametrize('snr', [-3, -6, -20, -50, -100])
 def test_add_noise(test_file, snr):
     """
-    test adding noise function.
+    Test adding noise function.
     """
     add_noise(test_file, snr)
 
@@ -38,7 +38,7 @@ def test_add_noise(test_file, snr):
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
 def test_fade_in_and_out(test_file):
     """
-    test function for adding a fade in and fade out effect.
+    Test function for adding a fade in and fade out effect.
     """
     fade_in_and_out(test_file)
 
@@ -53,7 +53,7 @@ def test_fade_in_and_out(test_file):
 @pytest.mark.parametrize('rms_level', [-6, -3, 0, 3, 6])
 def test_normalize(test_file, normalization_technique, rms_level):
     """
-    test function for the normalization function.
+    Test function for the normalization function.
     """
     normalize(test_file, normalization_technique, rms_level)
 

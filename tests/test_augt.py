@@ -11,7 +11,7 @@ from pydiogment.augt import (slow_down, speed, random_cropping, shift_time,
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
 def test_eliminate_silence(test_file):
     """
-    test function for the silence removal.
+    Test function for the silence removal.
     """
     eliminate_silence(test_file)
 
@@ -67,7 +67,7 @@ def test_shift_time(test_file, tshift, direction):
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
 def test_reverse(test_file):
     """
-    test function for the reversing function.
+    Test function for the reversing function.
     """
     reverse(test_file)
 
@@ -81,7 +81,7 @@ def test_reverse(test_file):
 @pytest.mark.parametrize('sr', [4000, 6000, 9000, 16000])
 def test_resample_audio(test_file, sr):
     """
-    test function for the resampling function.
+    Test function for the resampling function.
     """
     resample_audio(test_file, sr)
 

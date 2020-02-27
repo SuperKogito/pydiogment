@@ -3,7 +3,6 @@
 """
 import os
 import numpy as np
-from scipy.signal import resample
 from .utils.io import read_file, write_file
 
 
@@ -25,7 +24,6 @@ def apply_gain(infile, gain):
     x /= np.mean(np.abs(x))
 
     # export data to file
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_with_%s_gain.wav" % str(gain)
     write_file(output_file_path=output_file_path,
@@ -64,7 +62,6 @@ def add_noise(infile, snr):
     y = sig + np.sqrt(noise) * noise_factor
 
     # construct file names
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_%s_noisy.wav" % snr
 
@@ -88,7 +85,6 @@ def fade_in_and_out(infile):
     window = np.hamming(len(sig))
 
     # construct file names
-    input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_fade_in_out.wav"
 
@@ -133,7 +129,6 @@ def normalize(infile, normalization_technique="peak", rms_level=0):
         print("ParameterError: Unknown normalization_technique variable.")
 
     # construct file names
-    input_file_name = os.path.basename(infile).split(".wav")[0]
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_{}_normalized.wav".format(normalization_technique)
 
