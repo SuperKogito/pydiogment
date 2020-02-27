@@ -1,0 +1,24 @@
+# appveyor.yml
+---
+environment:
+  matrix:
+  - TOXENV: py35
+  - TOXENV: py36
+  - TOXENV: py37
+
+build: off
+
+install:
+- pip install --upgrade setuptools
+- pip install pytest
+- pip install pytest-cov pytest
+- pip install codecov
+- pip install coveralls
+- pip install pytest-xdist
+- pip install codacy-coverage
+- pip install matplotlib
+- pip install -r requirements.txt
+- sudo apt install ffmpeg
+
+test_script:
+- pytest --cache-clear -n 8 -q --cov=./ || --force-yes
