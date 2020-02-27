@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import os
-import csv
 import numpy as np
 import pandas as pd
 import scipy.io.wavfile
@@ -32,8 +31,8 @@ def extract_features(folder, num_ceps, fname, augmented=False):
     errors_caused = []
 
     # in case augmented data is processed
-    if augmented:
-        wave_fnames = [fname for fname in wave_fnames if "augment" in fname]
+    if augmented: wave_fnames = [fname for fname in wave_fnames if "augment" in fname]
+    else        : wave_fnames = [fname for fname in wave_fnames if "augment" not in fname]
 
     # get voice features
     for wave_fname in wave_fnames[:]:
@@ -49,12 +48,10 @@ def extract_features(folder, num_ceps, fname, augmented=False):
 
     # export results to file
     data = pd.DataFrame(features, columns=column_names)
-    if augmented:
-        data.to_csv("augmented_" + fname)
-    else:
-        data.to_csv(fname)
+    data.to_csv(fname)
     return errors_caused
 
 
 if __name__ == "__main__":
     _ = extract_features(folder="data/waves", num_ceps=13, fname="data/features.csv")
+    _ = extract_features(folder="data/waves", num_ceps=13, fname="data/augmented_features.csv", augmented=True)

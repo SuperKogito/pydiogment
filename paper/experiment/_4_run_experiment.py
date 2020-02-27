@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
-import cmat
 import time
-import random
 import numpy as np
 import pandas as pd
+from utils import cmat
 from sklearn import metrics
-import multiprocessing as mp
 import matplotlib.pyplot as plt
-from classifiers_config import classifiers
+from utils.classifiers_config import classifiers
 from sklearn.metrics import classification_report
-from sklearn.multiclass import OneVsRestClassifier
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import cross_val_score, train_test_split
-from dataproc import get_data, balance_dataset, pickle_save
+from utils.dataproc import get_data, balance_dataset, pickle_save
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -23,7 +20,7 @@ scalers = {"Standard": StandardScaler(), "MinMax" : MinMaxScaler()}
 
 def run_classification_experiment(x_train, x_test, y_train, y_test,
                                   data, X, y, classifier_name,
-                                  visualziations=True, graphing=False):
+                                  visualizations=True):
     t = time.time()
     classifier = classifiers[classifier_name]
     try:
@@ -55,15 +52,7 @@ def run_classification_experiment(x_train, x_test, y_train, y_test,
         accuracy = metrics.accuracy_score(y_test, y_pred)
         confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
 
-        if visualziations == True:
-            # plot non-normalized confusion matrix for training set
-            cmat.plot_confusion_matrix(y_train,
-                                       y_pred = clf.predict(x_train),
-                                       classes=y.emotion.unique(),
-                                       normalize=False,
-                                       title="Confusion matrix, without normalization")
-            plt.show()
-
+        if visualizations == True:
             # plot non-normalized confusion matrix for testing set
             cmat.plot_confusion_matrix(y_test,
                                        y_pred,
@@ -78,7 +67,7 @@ def run_classification_experiment(x_train, x_test, y_train, y_test,
         print(e)
 
 
-def train_model(data, model_fname, scaler_fname, scaler_type, classifier_name):
+def train_model(data, model_fname, scale, classifier_name, visualizations=False):
     # drop filenames
     data = data.drop(["file_name"], axis=1)
     # balance data set
@@ -87,18 +76,15 @@ def train_model(data, model_fname, scaler_fname, scaler_type, classifier_name):
     # split data
     x_train, x_test, y_train, y_test = train_test_split(X, y,
                                                         test_size=0.3,
-                                                        random_state=random.seed(42),
+                                                        random_state=22,
                                                         shuffle=True)
 
     # init scaler and fit data to scaler
-    if scaler_fname != "":
-        scaler = scalers[scaler_type]
+    if scale:
+        scaler = MinMaxScaler()
         scaler.fit(x_train)
         x_train = scaler.transform(x_train)
         x_test = scaler.transform(x_test)
-
-        # export scaler to file
-        pickle_save(scaler, scaler_fname)
 
     # run classification
     clf, t, accuracy, cmx = run_classification_experiment(x_train,
@@ -109,12 +95,11 @@ def train_model(data, model_fname, scaler_fname, scaler_type, classifier_name):
                                                           X,
                                                           y,
                                                           classifier_name,
-                                                          visualziations=False,
-                                                          graphing=False)
+                                                          visualizations)
 
     print("Training's duration is", t)
     # export model to file
-    pickle_save(clf, model_fname)
+    pickle_save(clf, "models/" + model_fname)
 
 
 if __name__ == "__main__":
@@ -126,42 +111,31 @@ if __name__ == "__main__":
                              'Linear SVM', 'MLP Classifier',
                              'Extra Trees Classifier']
 
-    # get data
-    data, _ = get_data("data/data.csv")
-
-    # data from german  file
-    X = data[data['file_name'].str.contains("DE")]
-
-    # data from from augmented german files
-    Y = X[X['file_name'].str.contains("augment") | X['file_name'].str.contains("no_silence")]
-    Conv = Y[Y['file_name'].str.contains("convolv")]
-
-    # common df
-    c = pd.merge(X, Y, how='inner', on=['file_name'])
-
-    # data from original german files
-    original_data = X[(~X.file_name.isin(c.file_name))]
-    original_data.to_csv("data/original_data.csv")
-
+    # get data from original and augmented files
+    original_data  = get_data("data/features.csv")[0]
+    augmented_data = get_data("data/augmented_features.csv")[0]
+    all_data       = pd.concat([original_data, augmented_data])
+    
+    # experiment
     for clf in available_classifiers[:]:
         try:
+            print("----------------------------------------------------------")
+            print("******************* NO AUGMENTATION **********************")
             # train using original data then original + augmented data
             train_model(original_data,
-                        scaler_fname='min_max.scaler',
-                        scaler_type="MinMax",
                         model_fname="_".join(clf.split(" ")) + "_with_min_max.model",
-                        classifier_name=clf)
-
+                        scale=False,
+                        classifier_name=clf,
+                        visualizations=False)
+    
+            print("----------------------------------------------------------")
+            print("******************* WITH AUGMENTATION ********************")
             # train using original + augmented data
-            train_model(data,
-                        scaler_fname='min_max.scaler',
-                        scaler_type="MinMax",
+            train_model(all_data,
                         model_fname="_".join(clf.split(" ")) + "_with_min_max.model",
-                        classifier_name= clf)
-
-            print("*************************************************************")
-            print("*************************************************************")
-            print("*************************************************************")
+                        scale=False,
+                        classifier_name=clf,
+                        visualizations=False)
 
         except Exception as e:
             print("ERROR: ", clf)

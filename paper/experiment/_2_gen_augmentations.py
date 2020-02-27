@@ -47,6 +47,11 @@ if __name__ == "__main__":
     wave_fnames = [os.path.join(root, file)
                    for root, dirs, files in os.walk(folder)  for file in files]
 
+    # print
+    print("-------------------------------------------------------------")
+    print("                      Start Augmenting                       ")
+    print("-------------------------------------------------------------")
     # augment files
-    for wave_fname in wave_fnames[:1]:
+    for wave_fname in wave_fnames[:]:
         augment_file(wave_fname)
+        print("-------------------------------------------------------------")

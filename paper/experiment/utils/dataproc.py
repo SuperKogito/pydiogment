@@ -4,13 +4,11 @@ import pandas as pd
 
 
 def pickle_save(object_to_save, fname):
-    pickle.dump(object_to_save, open("temp/" + fname, 'wb'))
-    #print(fname, " is saved.")
+    pickle.dump(object_to_save, open(fname, 'wb'))
 
 def pickle_load(fname):
     # load the model
-    loaded_object = pickle.load(open("temp/" + fname, 'rb'))
-    #print(fname, " loaded.")
+    loaded_object = pickle.load(open(fname, 'rb'))
     return loaded_object
 
 def get_data(file_path, drop_columns=True, drop_nans=True):
@@ -38,6 +36,7 @@ def get_data(file_path, drop_columns=True, drop_nans=True):
     column_names = list(data.columns)
     return data, list(data.columns)
 
+
 def balance_dataset(data):
     # define column names
     column_names = list(data.columns)
@@ -52,5 +51,5 @@ def balance_dataset(data):
     # split data
     X = balanced_data.iloc[:, :-1]
     y = balanced_data.iloc[:, -1:].astype('category')
-    #print("%25s : %s" % ("Data with balanced sets", str(balanced_data.shape)))
+    # print("%25s : %s" % ("Data with balanced sets", str(balanced_data.shape)))
     return balanced_data, X, y, column_names
