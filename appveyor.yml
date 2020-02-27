@@ -9,15 +9,15 @@ environment:
 build: off
 
 install:
-- pip install --upgrade setuptools
-- pip install pytest
-- pip install pytest-cov pytest
-- pip install codecov
-- pip install coveralls
-- pip install pytest-xdist
-- pip install codacy-coverage
-- pip install matplotlib
-- pip install -r requirements.txt
+- pip3 install --upgrade setuptools
+- pip3 install pytest
+- pip3 install pytest-cov pytest
+- pip3 install codecov
+- pip3 install coveralls
+- pip3 install pytest-xdist
+- pip3 install codacy-coverage
+- pip3 install matplotlib
+- pip3 install -r requirements.txt
 - sudo apt install ffmpeg
 
 test_script:
