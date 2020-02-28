@@ -18,7 +18,8 @@ def test_eliminate_silence(test_file):
     # check result
     fname = test_file.split(".wav")[0] + "_augmented_without_silence.wav"
     time.sleep(1)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -29,7 +30,8 @@ def test_slow_down(test_file, coefficient):
     # check result
     fname = "%s_augmented_slowed.wav" % (test_file.split(".wav")[0])
     time.sleep(1)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -40,7 +42,8 @@ def test_speed(test_file, coefficient):
     # check result
     fname = "%s_augmented_speeded.wav" % (test_file.split(".wav")[0])
     time.sleep(1)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -50,7 +53,8 @@ def test_random_cropping(test_file, min_len):
 
     # check result
     fname = "%s_augmented_randomly_cropped_%s.wav" % (test_file.split(".wav")[0], str(min_len))
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -61,7 +65,8 @@ def test_shift_time(test_file, tshift, direction):
 
     # check result
     fname = "%s_augmented_%s_%s_shifted.wav" % (test_file.split(".wav")[0], direction, tshift)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -74,7 +79,8 @@ def test_reverse(test_file):
     # check result
     fname = "{0}_augmented_reversed.wav".format(test_file.split(".wav")[0])
     time.sleep(1)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -89,4 +95,5 @@ def test_resample_audio(test_file, sr):
     fname = "{0}_augmented_resampled_to_{1}.wav".format(test_file.split(".wav")[0],
                                                          sr)
     time.sleep(1)
-    assert(os.path.isfile(fname))
+    if not (os.path.isfile(fname)):
+        raise AssertionError

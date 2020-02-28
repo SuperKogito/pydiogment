@@ -3,8 +3,7 @@
 ################################################################################
 import pytest
 import numpy as np
-from pydiogment.utils.filters import (butter_lowpass, butter_highpass,
-                                      butter_bandpass, butter_filter)
+from pydiogment.utils.filters import butter_filter
 
 
 @pytest.mark.parametrize('fs', [8000.0])
@@ -14,7 +13,7 @@ from pydiogment.utils.filters import (butter_lowpass, butter_highpass,
 @pytest.mark.parametrize('order', [3, 5, 6, 9])
 def test_filters(fs, low_cut, high_cut, filter_type, order):
     """
-    test function for low, high and bandpass filters.
+    Test function for low, high and bandpass filters.
     """
     # define input noisy signal.
     T = 0.05
@@ -29,7 +28,7 @@ def test_filters(fs, low_cut, high_cut, filter_type, order):
 
     try:
         # filter signal
-        y = butter_filter(x, fs, filter_type, low_cut, high_cut, order)
+        _ = butter_filter(x, fs, filter_type, low_cut, high_cut, order)
 
     except Exception as e:
         print(e)

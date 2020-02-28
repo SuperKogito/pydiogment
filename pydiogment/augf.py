@@ -22,7 +22,7 @@ def convolve(infile, ir_fname, level=0.5):
     x = np.copy(x)
 
     # change the path below for the sounds folder
-    fs2, ir = read_file(filename=ir_fname)
+    _, ir = read_file(filename=ir_fname)
 
     # apply convolution
     y = np.convolve(x, ir, 'full')[0:x.shape[0]] * level + x * (1 - level)
@@ -51,7 +51,7 @@ def change_tone(infile, tone):
         - tone   (int) : tone to change.
     """
     # read input file
-    fs, sig = read_file(filename=infile)
+    fs, _ = read_file(filename=infile)
 
     # prepare file names for the tone changing command
     input_file_name = os.path.basename(infile).split(".wav")[0]
@@ -91,7 +91,6 @@ def apply_filter(infile, filter_type, low_cutoff_freq, high_cutoff_freq=None, or
                       order=order)
 
     # export data to file
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_{0}_pass_filtered.wav".format(filter_type)
     write_file(output_file_path=output_file_path,

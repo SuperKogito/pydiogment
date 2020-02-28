@@ -179,7 +179,6 @@ def reverse(infile):
     augmented_sig = sig[::-1]
 
     # construct file names
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_reversed.wav"
 
@@ -208,9 +207,9 @@ def resample_audio(infile, sr):
     # apply slowing command
     sampling_command = ["ffmpeg", "-i", infile, "-ar", str(sr), output_file]
     print(" ".join(sampling_command))
-    out = subprocess.Popen(sampling_command,
-                           stdout=subprocess.PIPE,
-                           stderr=subprocess.PIPE)
+    _ = subprocess.Popen(sampling_command,
+                         stdout=subprocess.PIPE,
+                         stderr=subprocess.PIPE)
     # # read input file
     # fs, sig = read_file(filename=infile)
     #

@@ -28,7 +28,6 @@ def write_file(output_file_path, input_file_name, name_attribute, sig, fs):
     Read wave file as mono.
 
     Args:
-        - filename         (str) : wave file / path.
         - output_file_path (str) : path to save resulting wave file to.
         - input_file_name  (str) : name of processed wave file,
         - name_attribute   (str) : attribute to add to output file name.

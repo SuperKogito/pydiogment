@@ -81,7 +81,7 @@ def butter_filter(sig, fs, ftype="low", low_cut=50, high_cut=2000, order=5):
         - order      (int) : order of the filter, by default defined to 5.
 
     Returns:
-        array of the filtered signal.    
+        array of the filtered signal.
     """
     if   ftype == "band" : b, a = butter_bandpass(low_cut, high_cut, fs, order)
     elif ftype == "high" : b, a = butter_highpass(high_cut, fs, order)
