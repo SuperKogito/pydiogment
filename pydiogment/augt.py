@@ -63,7 +63,6 @@ def random_cropping(infile, min_len=1):
         y = x[int(math.floor(start * fs)):int(math.ceil(end * fs))]
 
         # construct file names
-        input_file_name = os.path.basename(infile)
         output_file_path = os.path.dirname(infile)
         name_attribute = "_augmented_randomly_cropped_%s.wav" % str(min_len)
 
@@ -209,23 +208,3 @@ def resample_audio(infile, sr):
     _ = subprocess.Popen(sampling_command,
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
-    # # read input file
-    # fs, sig = read_file(filename=infile)
-    #
-    # # compute the number of samples
-    # number_of_samples = np.floor((sr / fs) * len(sig))
-    #
-    # # resample signal
-    # y = resample(sig, number_of_samples)
-    #
-    # # construct file names
-    # input_file_name = os.path.basename(infile).split(".wav")[0]
-    # output_file_path = os.path.dirname(infile)
-    # name_attribute = "_augmented_resampled_with_{}.wav".format(sr)
-    #
-    # # export data to file
-    # write_file(output_file_path=output_file_path,
-    #            input_file_name=infile,
-    #            name_attribute=name_attribute,
-    #            sig=y,
-    #            fs=fs)
