@@ -155,7 +155,6 @@ def shift_time(infile, tshift, direction):
     augmented_sig = np.roll(sig, shift)
 
     # construct file names
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_%s_%s_shifted.wav" % (direction, tshift)
 

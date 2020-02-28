@@ -4,6 +4,7 @@
 import os
 import time
 import pytest
+from assert_file_exists import assert_file_exists
 from pydiogment.augf import convolve, change_tone, apply_filter
 
 
@@ -22,8 +23,7 @@ def test_convolve(test_file, ir_fname, level):
                                                                     os.path.basename(ir_fname.split(".")[0]),
                                                                     level)
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -38,8 +38,7 @@ def test_change_tone(test_file, tone):
     # check result
     fname = "%s_augmented_%s_toned.wav" % (test_file.split(".wav")[0], str(tone))
     time.sleep(5)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -57,6 +56,4 @@ def test_apply_filter(test_file, filter_type, low_cutoff_freq, high_cutoff_freq,
     # check result
     fname = "{0}_augmented_{1}_pass_filtered.wav".format(test_file.split(".wav")[0], filter_type)
     time.sleep(3)
-    print(fname, os.path.isfile(fname))
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)

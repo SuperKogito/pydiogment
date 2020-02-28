@@ -31,7 +31,6 @@ def convolve(infile, ir_fname, level=0.5):
     y /= np.mean(np.abs(y))
 
     # export data to file
-    input_file_name = os.path.basename(infile)
     output_file_path = os.path.dirname(infile)
     name_attribute = "_augmented_{0}_convolved_with_level_{1}.wav".format(os.path.basename(ir_fname.split(".")[0]),
                                                                           level)

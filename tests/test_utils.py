@@ -6,6 +6,14 @@ import numpy as np
 from pydiogment.utils.filters import butter_filter
 
 
+def assert_file_exists(fname):
+    """
+    Raise AssertionError if file does not exist.
+    """
+    if not (os.path.isfile(fname)):
+        raise AssertionError
+
+
 @pytest.mark.parametrize('fs', [8000.0])
 @pytest.mark.parametrize('low_cut', [50.0, 150.0, 300.0])
 @pytest.mark.parametrize('high_cut', [1000.0, 2000.0, 3000.0])

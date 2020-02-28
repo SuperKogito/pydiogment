@@ -4,6 +4,7 @@
 import os
 import time
 import pytest
+from assert_file_exists import assert_file_exists
 from pydiogment.augt import (slow_down, speed, random_cropping, shift_time,
                              resample_audio, eliminate_silence, reverse)
 
@@ -18,8 +19,7 @@ def test_eliminate_silence(test_file):
     # check result
     fname = test_file.split(".wav")[0] + "_augmented_without_silence.wav"
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -30,8 +30,7 @@ def test_slow_down(test_file, coefficient):
     # check result
     fname = "%s_augmented_slowed.wav" % (test_file.split(".wav")[0])
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -42,8 +41,7 @@ def test_speed(test_file, coefficient):
     # check result
     fname = "%s_augmented_speeded.wav" % (test_file.split(".wav")[0])
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -53,8 +51,7 @@ def test_random_cropping(test_file, min_len):
 
     # check result
     fname = "%s_augmented_randomly_cropped_%s.wav" % (test_file.split(".wav")[0], str(min_len))
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -65,8 +62,7 @@ def test_shift_time(test_file, tshift, direction):
 
     # check result
     fname = "%s_augmented_%s_%s_shifted.wav" % (test_file.split(".wav")[0], direction, tshift)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -79,8 +75,7 @@ def test_reverse(test_file):
     # check result
     fname = "{0}_augmented_reversed.wav".format(test_file.split(".wav")[0])
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
 
 
 @pytest.mark.parametrize('test_file', ['tests/testfiles/test.wav'])
@@ -95,5 +90,4 @@ def test_resample_audio(test_file, sr):
     fname = "{0}_augmented_resampled_to_{1}.wav".format(test_file.split(".wav")[0],
                                                          sr)
     time.sleep(1)
-    if not (os.path.isfile(fname)):
-        raise AssertionError
+    assert_file_exists(fname)
