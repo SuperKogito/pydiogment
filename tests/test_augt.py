@@ -3,7 +3,7 @@
 ################################################################################
 import time
 import pytest
-from test_utils import assert_file_exists
+from tests.test_utils import assert_file_exists
 from pydiogment.augt import (slow_down, speed, random_cropping, shift_time,
                              resample_audio, eliminate_silence, reverse)
 

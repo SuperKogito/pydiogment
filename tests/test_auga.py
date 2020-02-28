@@ -3,7 +3,7 @@
 ################################################################################
 import time
 import pytest
-from test_utils import assert_file_exists
+from tests.test_utils import assert_file_exists
 from pydiogment.auga import apply_gain, add_noise, fade_in_and_out, normalize
 
 
