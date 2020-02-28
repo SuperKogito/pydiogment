@@ -24,6 +24,7 @@ install:
   - conda info -a
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy scipy nose"
   - activate test-environment
+  - cinst ffmpeg
   - pip install --upgrade setuptools
   - pip install pytest
   - pip install pytest-cov pytest
