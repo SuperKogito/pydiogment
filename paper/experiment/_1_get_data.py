@@ -8,6 +8,9 @@ import subprocess
 
 
 def download_and_extract_zip(zip_url):
+    """
+    Dowload and extract data .zip file.
+    """
     r = requests.get(zip_url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
     z.extractall()
@@ -15,7 +18,7 @@ def download_and_extract_zip(zip_url):
 
 def manage(waves_folder, data_folder):
     """
-    organise the emotions folder.
+    Organise the emotions folder.
     """
     # define emotions list
     emotions_list = {"W": "anger", "L": "boredom", "E": "disgust",
@@ -44,7 +47,10 @@ def manage(waves_folder, data_folder):
         shutil.copyfile(file_path, data_folder + emotion + file_name)
 
 
-def prepare_data(zip_url = "http://emodb.bilderbar.info/download/download.zip"):
+def prepare_data(zip_url="http://emodb.bilderbar.info/download/download.zip"):
+    """
+    Prepare the data by cleaning unneeded folders.
+    """
     # download and extract data
     download_and_extract_zip(zip_url)
 
@@ -60,6 +66,8 @@ def prepare_data(zip_url = "http://emodb.bilderbar.info/download/download.zip"):
     # organize data
     if not os.path.exists("data/waves/") :
         os.mkdir("data/waves/")
+
+    # manage
     manage("wav/", "data/waves/")
     _ = subprocess.Popen(["rm", "-rf", "wav"], stdin=subprocess.PIPE,
                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)

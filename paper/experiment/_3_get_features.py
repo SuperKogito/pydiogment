@@ -7,6 +7,9 @@ import python_speech_features as psf
 
 
 def get_file_features(wav_fname, num_ceps):
+    """
+    Extract mfcc features from a file.
+    """
     # read wave
     fs, sig = scipy.io.wavfile.read(wav_fname)
 
@@ -22,6 +25,9 @@ def get_file_features(wav_fname, num_ceps):
 
 
 def extract_features(folder, num_ceps, fname, augmented=False):
+    """
+    Extract features from files.
+    """
     # collect paths to wave files
     wave_fnames = [os.path.join(root, file)
                    for root, dirs, files in os.walk(folder)  for file in files]

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
+import warnings
 import numpy as np
 import pandas as pd
 from utils import cmat
@@ -11,16 +12,35 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import cross_val_score, train_test_split
 from utils.dataproc import get_data, balance_dataset, pickle_save
 
-import warnings
 warnings.filterwarnings("ignore")
 
 # global variables
 scalers = {"Standard": StandardScaler(), "MinMax" : MinMaxScaler()}
 
 
-def run_classification_experiment(x_train, x_test, y_train, y_test,
-                                  data, X, y, classifier_name,
-                                  visualizations=True):
+def train_model(data, model_fname, scale, classifier_name, visualizations=False):
+    """
+    Train ML model.
+    """
+    # drop filenames
+    data = data.drop(["file_name"], axis=1)
+    # balance data set
+    balanced_data, X, y, column_names = balance_dataset(data)
+
+    # split data
+    x_train, x_test, y_train, y_test = train_test_split(X, y,
+                                                        test_size=0.3,
+                                                        random_state=22,
+                                                        shuffle=True)
+
+    # init scaler and fit data to scaler
+    if scale:
+        scaler = MinMaxScaler()
+        scaler.fit(x_train)
+        x_train = scaler.transform(x_train)
+        x_test = scaler.transform(x_test)
+
+    # run classification
     t = time.time()
     classifier = classifiers[classifier_name]
     try:
@@ -52,7 +72,7 @@ def run_classification_experiment(x_train, x_test, y_train, y_test,
         accuracy = metrics.accuracy_score(y_test, y_pred)
         confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
 
-        if visualizations == True:
+        if visualizations:
             # plot non-normalized confusion matrix for testing set
             cmat.plot_confusion_matrix(y_test,
                                        y_pred,
@@ -60,42 +80,11 @@ def run_classification_experiment(x_train, x_test, y_train, y_test,
                                        normalize=False,
                                        title="Confusion matrix, without normalization")
             plt.show()
-        return clf, training_duration, accuracy, confusion_matrix
 
     except Exception as e:
         print("Error: faced error when testing ", classifier_name)
         print(e)
-
-
-def train_model(data, model_fname, scale, classifier_name, visualizations=False):
-    # drop filenames
-    data = data.drop(["file_name"], axis=1)
-    # balance data set
-    balanced_data, X, y, column_names = balance_dataset(data)
-
-    # split data
-    x_train, x_test, y_train, y_test = train_test_split(X, y,
-                                                        test_size=0.3,
-                                                        random_state=22,
-                                                        shuffle=True)
-
-    # init scaler and fit data to scaler
-    if scale:
-        scaler = MinMaxScaler()
-        scaler.fit(x_train)
-        x_train = scaler.transform(x_train)
-        x_test = scaler.transform(x_test)
-
-    # run classification
-    clf, t, accuracy, cmx = run_classification_experiment(x_train,
-                                                          x_test,
-                                                          y_train,
-                                                          y_test,
-                                                          data,
-                                                          X,
-                                                          y,
-                                                          classifier_name,
-                                                          visualizations)
+        return
 
     print("Training's duration is", t)
     # export model to file
@@ -115,7 +104,7 @@ if __name__ == "__main__":
     original_data  = get_data("data/features.csv")[0]
     augmented_data = get_data("data/augmented_features.csv")[0]
     all_data       = pd.concat([original_data, augmented_data])
-    
+
     # experiment
     for clf in available_classifiers[:]:
         try:
@@ -127,7 +116,7 @@ if __name__ == "__main__":
                         scale=False,
                         classifier_name=clf,
                         visualizations=False)
-    
+
             print("----------------------------------------------------------")
             print("******************* WITH AUGMENTATION ********************")
             # train using original + augmented data
