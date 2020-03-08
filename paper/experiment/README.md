@@ -25,8 +25,13 @@ In a second phase, we augment the data using `Pydiogment` by applying the follow
 
 The results are under `results.txt`.
 
-### Graph
-insert graph here
 
 ### How to replicate
-To replicate the experiment, please follow these instructions
+To replicate the experiment, please follow these instructions:
+1. To get the data: `python3 _1_get_data.py`
+2. To generate augmented data: `python3 _2_gen_augmentations.py`
+3. To extract the features: `python3 _3_get_features.py`
+4. To run the experiment: `python3 _4_run_experiment.py`
+
+To pass the the experiment's output to a results file use:
+`python3 _4_run_experiment.py > results.txt`
