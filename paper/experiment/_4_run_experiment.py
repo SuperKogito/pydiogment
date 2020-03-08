@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 import warnings
 import numpy as np
@@ -9,8 +10,8 @@ import matplotlib.pyplot as plt
 from utils.classifiers_config import classifiers
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from sklearn.model_selection import cross_val_score, train_test_split
 from utils.dataproc import get_data, balance_dataset, pickle_save
+from sklearn.model_selection import cross_val_score, train_test_split
 
 warnings.filterwarnings("ignore")
 
@@ -86,7 +87,7 @@ def train_model(data, model_fname, scale, classifier_name, visualizations=False)
         print(e)
         return
 
-    print("Training's duration is", t)
+    print("Training's duration is", np.round(time.time() - t, 3))
     # export model to file
     pickle_save(clf, "models/" + model_fname)
 
@@ -104,6 +105,9 @@ if __name__ == "__main__":
     original_data  = get_data("data/features.csv")[0]
     augmented_data = get_data("data/augmented_features.csv")[0]
     all_data       = pd.concat([original_data, augmented_data])
+
+    # make dir
+    if not (os.path.isdir("models")): os.mkdir("models")
 
     # experiment
     for clf in available_classifiers[:]:

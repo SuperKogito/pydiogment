@@ -4,12 +4,20 @@ import pandas as pd
 
 
 def pickle_save(object_to_save, fname):
+    """
+    Save data to file using pickle,
+    """
     pickle.dump(object_to_save, open(fname, 'wb'))
 
+
 def pickle_load(fname):
+    """
+    Load data from file using pickle.
+    """
     # load the model
     loaded_object = pickle.load(open(fname, 'rb'))
     return loaded_object
+
 
 def get_data(file_path, drop_columns=True, drop_nans=True):
     # load data

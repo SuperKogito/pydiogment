@@ -3,504 +3,504 @@
 ----------------------------------------------------------
 K-Nearest Neighbors (distance weights)
 ----------------------------------------------------------
-Cross-validation scores :  [0.6   0.533 0.578 0.644 0.556]
-Testing score           :  0.67
+Cross-validation scores :  [0.622 0.622 0.511 0.622 0.644]
+Testing score           :  0.742
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.80      0.33      0.47        12
-     sadness       0.77      0.67      0.71        15
-       anger       0.86      0.63      0.73        19
-     boredom       0.73      0.62      0.67        13
-        fear       0.38      0.69      0.49        13
-   happiness       0.67      0.73      0.70        11
-     disgust       0.78      1.00      0.88        14
+     neutral       0.83      0.71      0.77        14
+       anger       0.70      0.54      0.61        13
+        fear       0.75      1.00      0.86        15
+     disgust       0.70      0.58      0.64        12
+     sadness       0.67      0.63      0.65        19
+     boredom       0.62      0.73      0.67        11
+   happiness       0.93      1.00      0.96        13
 
-    accuracy                           0.67        97
-   macro avg       0.71      0.67      0.66        97
-weighted avg       0.72      0.67      0.67        97
+    accuracy                           0.74        97
+   macro avg       0.74      0.74      0.74        97
+weighted avg       0.74      0.74      0.74        97
 
-Training's duration is 0.0015664100646972656
+Training's duration is 1.217
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 K-Nearest Neighbors (distance weights)
 ----------------------------------------------------------
-Cross-validation scores :  [0.851 0.858 0.836 0.847 0.84 ]
-Testing score           :  0.843
+Cross-validation scores :  [0.836 0.851 0.86  0.834 0.849]
+Testing score           :  0.856
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.93      0.79      0.85       127
-     sadness       0.83      0.70      0.76       151
-       anger       0.87      0.87      0.87       150
-     boredom       0.83      0.92      0.87       124
-        fear       0.80      0.87      0.83       127
-   happiness       0.75      0.81      0.78       141
-     disgust       0.90      0.95      0.93       146
+     neutral       0.92      0.77      0.84       146
+       anger       0.86      0.75      0.80       127
+        fear       0.90      0.93      0.92       151
+     disgust       0.80      0.86      0.83       127
+     sadness       0.79      0.87      0.83       150
+     boredom       0.80      0.85      0.82       141
+   happiness       0.95      0.97      0.96       124
 
-    accuracy                           0.84       966
-   macro avg       0.84      0.84      0.84       966
-weighted avg       0.84      0.84      0.84       966
+    accuracy                           0.86       966
+   macro avg       0.86      0.86      0.86       966
+weighted avg       0.86      0.86      0.86       966
 
-Training's duration is 0.004815101623535156
+Training's duration is 0.36
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 K-Nearest Neighbors (uniform weights)
 ----------------------------------------------------------
-Cross-validation scores :  [0.689 0.467 0.778 0.533 0.578]
-Testing score           :  0.619
+Cross-validation scores :  [0.6   0.6   0.622 0.578 0.6  ]
+Testing score           :  0.608
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.78      0.58      0.67        12
-     sadness       0.67      0.53      0.59        15
-       anger       0.71      0.53      0.61        19
-     boredom       0.50      0.69      0.58        13
-        fear       0.54      0.54      0.54        13
-   happiness       0.38      0.45      0.42        11
-     disgust       0.78      1.00      0.88        14
+     neutral       0.53      0.71      0.61        14
+       anger       0.50      0.38      0.43        13
+        fear       0.64      0.60      0.62        15
+     disgust       0.50      0.58      0.54        12
+     sadness       0.69      0.58      0.63        19
+     boredom       0.46      0.55      0.50        11
+   happiness       1.00      0.85      0.92        13
 
-    accuracy                           0.62        97
-   macro avg       0.62      0.62      0.61        97
-weighted avg       0.63      0.62      0.62        97
+    accuracy                           0.61        97
+   macro avg       0.62      0.61      0.61        97
+weighted avg       0.63      0.61      0.61        97
 
-Training's duration is 0.0011951923370361328
+Training's duration is 0.321
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 K-Nearest Neighbors (uniform weights)
 ----------------------------------------------------------
-Cross-validation scores :  [0.745 0.723 0.778 0.796 0.784]
-Testing score           :  0.753
+Cross-validation scores :  [0.729 0.761 0.698 0.783 0.747]
+Testing score           :  0.793
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.82      0.78      0.80       127
-     sadness       0.71      0.63      0.67       151
-       anger       0.74      0.79      0.77       150
-     boredom       0.68      0.69      0.69       124
-        fear       0.68      0.72      0.70       127
-   happiness       0.70      0.74      0.72       141
-     disgust       0.93      0.91      0.92       146
+     neutral       0.80      0.81      0.81       146
+       anger       0.72      0.69      0.71       127
+        fear       0.83      0.85      0.84       151
+     disgust       0.72      0.79      0.75       127
+     sadness       0.80      0.71      0.75       150
+     boredom       0.76      0.74      0.75       141
+   happiness       0.90      0.98      0.94       124
 
-    accuracy                           0.75       966
-   macro avg       0.75      0.75      0.75       966
-weighted avg       0.75      0.75      0.75       966
+    accuracy                           0.79       966
+   macro avg       0.79      0.79      0.79       966
+weighted avg       0.79      0.79      0.79       966
 
-Training's duration is 0.004004478454589844
+Training's duration is 0.473
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Gaussian Process
 ----------------------------------------------------------
-Cross-validation scores :  [0.156 0.178 0.133 0.156 0.178]
-Testing score           :  0.237
+Cross-validation scores :  [0.222 0.222 0.222 0.222 0.222]
+Testing score           :  0.206
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       1.00      0.17      0.29        12
-     sadness       0.00      0.00      0.00        15
-       anger       1.00      0.05      0.10        19
-     boredom       1.00      0.08      0.14        13
-        fear       0.80      0.31      0.44        13
-   happiness       0.50      0.09      0.15        11
-     disgust       0.16      1.00      0.28        14
+     neutral       1.00      0.14      0.25        14
+       anger       0.50      0.08      0.13        13
+        fear       0.00      0.00      0.00        15
+     disgust       1.00      0.17      0.29        12
+     sadness       1.00      0.11      0.19        19
+     boredom       0.00      0.00      0.00        11
+   happiness       0.15      1.00      0.26        13
 
-    accuracy                           0.24        97
-   macro avg       0.64      0.24      0.20        97
-weighted avg       0.64      0.24      0.19        97
+    accuracy                           0.21        97
+   macro avg       0.52      0.21      0.16        97
+weighted avg       0.55      0.21      0.16        97
 
-Training's duration is 0.059845924377441406
+Training's duration is 0.843
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Gaussian Process
 ----------------------------------------------------------
-Cross-validation scores :  [0.594 0.623 0.596 0.612 0.684]
-Testing score           :  0.685
+Cross-validation scores :  [0.608 0.634 0.659 0.614 0.642]
+Testing score           :  0.701
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.94      0.50      0.66       127
-     sadness       0.95      0.52      0.67       151
-       anger       0.99      0.74      0.85       150
-     boredom       1.00      0.74      0.85       124
-        fear       0.96      0.67      0.79       127
-   happiness       0.96      0.62      0.76       141
-     disgust       0.33      0.99      0.50       146
+     neutral       1.00      0.52      0.68       146
+       anger       0.92      0.61      0.74       127
+        fear       1.00      0.75      0.86       151
+     disgust       0.95      0.70      0.81       127
+     sadness       0.98      0.71      0.82       150
+     boredom       0.97      0.65      0.78       141
+   happiness       0.31      0.98      0.47       124
 
-    accuracy                           0.69       966
-   macro avg       0.88      0.68      0.72       966
-weighted avg       0.87      0.69      0.72       966
+    accuracy                           0.70       966
+   macro avg       0.87      0.70      0.74       966
+weighted avg       0.89      0.70      0.74       966
 
-Training's duration is 12.330552339553833
+Training's duration is 70.197
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Decision Tree
 ----------------------------------------------------------
-Cross-validation scores :  [0.311 0.4   0.444 0.489 0.267]
-Testing score           :  0.433
+Cross-validation scores :  [0.378 0.444 0.489 0.4   0.333]
+Testing score           :  0.485
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.41      0.75      0.53        12
-     sadness       0.50      0.40      0.44        15
-       anger       0.80      0.42      0.55        19
-     boredom       0.25      0.23      0.24        13
-        fear       0.30      0.23      0.26        13
-   happiness       0.18      0.27      0.21        11
-     disgust       0.71      0.71      0.71        14
+     neutral       0.50      0.57      0.53        14
+       anger       0.50      0.38      0.43        13
+        fear       0.53      0.60      0.56        15
+     disgust       0.17      0.17      0.17        12
+     sadness       0.62      0.53      0.57        19
+     boredom       0.27      0.27      0.27        11
+   happiness       0.67      0.77      0.71        13
 
-    accuracy                           0.43        97
-   macro avg       0.45      0.43      0.42        97
-weighted avg       0.48      0.43      0.44        97
+    accuracy                           0.48        97
+   macro avg       0.47      0.47      0.47        97
+weighted avg       0.48      0.48      0.48        97
 
-Training's duration is 0.005207538604736328
+Training's duration is 0.037
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Decision Tree
 ----------------------------------------------------------
-Cross-validation scores :  [0.767 0.803 0.785 0.792 0.771]
-Testing score           :  0.817
+Cross-validation scores :  [0.747 0.78  0.792 0.745 0.767]
+Testing score           :  0.799
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.85      0.80      0.83       127
-     sadness       0.86      0.79      0.82       151
-       anger       0.79      0.80      0.80       150
-     boredom       0.75      0.87      0.81       124
-        fear       0.76      0.81      0.78       127
-   happiness       0.79      0.76      0.78       141
-     disgust       0.92      0.89      0.91       146
+     neutral       0.80      0.80      0.80       146
+       anger       0.76      0.81      0.78       127
+        fear       0.86      0.83      0.84       151
+     disgust       0.78      0.80      0.79       127
+     sadness       0.75      0.78      0.76       150
+     boredom       0.77      0.75      0.76       141
+   happiness       0.91      0.82      0.86       124
 
-    accuracy                           0.82       966
-   macro avg       0.82      0.82      0.82       966
-weighted avg       0.82      0.82      0.82       966
+    accuracy                           0.80       966
+   macro avg       0.80      0.80      0.80       966
+weighted avg       0.80      0.80      0.80       966
 
-Training's duration is 0.022557973861694336
+Training's duration is 0.203
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Random Forest
 ----------------------------------------------------------
-Cross-validation scores :  [0.511 0.6   0.467 0.578 0.644]
-Testing score           :  0.66
+Cross-validation scores :  [0.6   0.578 0.6   0.689 0.689]
+Testing score           :  0.598
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.62      0.83      0.71        12
-     sadness       0.67      0.53      0.59        15
-       anger       0.86      0.63      0.73        19
-     boredom       0.67      0.62      0.64        13
-        fear       0.54      0.54      0.54        13
-   happiness       0.43      0.55      0.48        11
-     disgust       0.81      0.93      0.87        14
+     neutral       0.57      0.86      0.69        14
+       anger       0.57      0.31      0.40        13
+        fear       0.69      0.60      0.64        15
+     disgust       0.54      0.58      0.56        12
+     sadness       0.58      0.37      0.45        19
+     boredom       0.44      0.73      0.55        11
+   happiness       0.85      0.85      0.85        13
 
-    accuracy                           0.66        97
-   macro avg       0.66      0.66      0.65        97
-weighted avg       0.68      0.66      0.66        97
+    accuracy                           0.60        97
+   macro avg       0.61      0.61      0.59        97
+weighted avg       0.61      0.60      0.59        97
 
-Training's duration is 0.12923622131347656
+Training's duration is 2.087
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Random Forest
 ----------------------------------------------------------
-Cross-validation scores :  [0.854 0.922 0.896 0.878 0.887]
-Testing score           :  0.907
+Cross-validation scores :  [0.891 0.885 0.876 0.878 0.904]
+Testing score           :  0.906
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.90      0.91      0.90       127
-     sadness       0.87      0.91      0.89       151
-       anger       0.96      0.89      0.92       150
-     boredom       0.89      0.94      0.91       124
-        fear       0.88      0.89      0.88       127
-   happiness       0.89      0.84      0.86       141
-     disgust       0.96      0.98      0.97       146
+     neutral       0.90      0.95      0.92       146
+       anger       0.88      0.91      0.90       127
+        fear       0.97      0.86      0.91       151
+     disgust       0.89      0.91      0.90       127
+     sadness       0.90      0.89      0.89       150
+     boredom       0.89      0.88      0.89       141
+   happiness       0.92      0.96      0.94       124
 
     accuracy                           0.91       966
    macro avg       0.91      0.91      0.91       966
 weighted avg       0.91      0.91      0.91       966
 
-Training's duration is 0.23293685913085938
+Training's duration is 2.73
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 AdaBoost
 ----------------------------------------------------------
-Cross-validation scores :  [0.267 0.311 0.378 0.333 0.333]
-Testing score           :  0.268
+Cross-validation scores :  [0.378 0.333 0.289 0.222 0.2  ]
+Testing score           :  0.258
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.17      0.83      0.28        12
-     sadness       0.57      0.27      0.36        15
-       anger       0.00      0.00      0.00        19
-     boredom       0.00      0.00      0.00        13
-        fear       0.00      0.00      0.00        13
-   happiness       0.43      0.82      0.56        11
-     disgust       0.43      0.21      0.29        14
+     neutral       0.75      0.43      0.55        14
+       anger       0.12      0.08      0.10        13
+        fear       0.06      0.07      0.06        15
+     disgust       0.30      0.75      0.43        12
+     sadness       0.00      0.00      0.00        19
+     boredom       0.23      0.73      0.35        11
+   happiness       0.00      0.00      0.00        13
 
-    accuracy                           0.27        97
-   macro avg       0.23      0.30      0.21        97
-weighted avg       0.22      0.27      0.20        97
+    accuracy                           0.26        97
+   macro avg       0.21      0.29      0.21        97
+weighted avg       0.20      0.26      0.19        97
 
-Training's duration is 0.13417625427246094
+Training's duration is 1.079
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 AdaBoost
 ----------------------------------------------------------
-Cross-validation scores :  [0.51  0.455 0.441 0.43  0.371]
-Testing score           :  0.482
+Cross-validation scores :  [0.525 0.439 0.49  0.525 0.46 ]
+Testing score           :  0.509
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.52      0.78      0.63       127
-     sadness       0.62      0.17      0.26       151
-       anger       0.53      0.31      0.39       150
-     boredom       0.50      0.35      0.41       124
-        fear       0.25      0.39      0.31       127
-   happiness       0.46      0.55      0.50       141
-     disgust       0.63      0.86      0.73       146
+     neutral       0.63      0.77      0.70       146
+       anger       0.44      0.54      0.49       127
+        fear       0.43      0.35      0.39       151
+     disgust       0.36      0.52      0.43       127
+     sadness       0.40      0.34      0.37       150
+     boredom       0.62      0.30      0.41       141
+   happiness       0.72      0.79      0.75       124
 
-    accuracy                           0.48       966
-   macro avg       0.50      0.49      0.46       966
-weighted avg       0.51      0.48      0.46       966
+    accuracy                           0.51       966
+   macro avg       0.52      0.52      0.50       966
+weighted avg       0.52      0.51      0.50       966
 
-Training's duration is 0.5588369369506836
+Training's duration is 4.038
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Naive Bayes
 ----------------------------------------------------------
-Cross-validation scores :  [0.556 0.667 0.556 0.556 0.6  ]
+Cross-validation scores :  [0.667 0.622 0.533 0.733 0.489]
 Testing score           :  0.619
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.83      0.83      0.83        12
-     sadness       0.47      0.60      0.53        15
-       anger       0.80      0.63      0.71        19
-     boredom       0.60      0.69      0.64        13
-        fear       0.47      0.54      0.50        13
-   happiness       0.29      0.18      0.22        11
-     disgust       0.79      0.79      0.79        14
+     neutral       0.64      0.50      0.56        14
+       anger       0.55      0.46      0.50        13
+        fear       0.62      0.67      0.65        15
+     disgust       0.64      0.75      0.69        12
+     sadness       0.57      0.42      0.48        19
+     boredom       0.54      0.64      0.58        11
+   happiness       0.72      1.00      0.84        13
 
     accuracy                           0.62        97
-   macro avg       0.61      0.61      0.60        97
-weighted avg       0.62      0.62      0.61        97
+   macro avg       0.61      0.63      0.61        97
+weighted avg       0.61      0.62      0.61        97
 
-Training's duration is 0.0013070106506347656
+Training's duration is 0.032
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Naive Bayes
 ----------------------------------------------------------
-Cross-validation scores :  [0.588 0.59  0.603 0.61  0.64 ]
-Testing score           :  0.619
+Cross-validation scores :  [0.601 0.665 0.596 0.645 0.642]
+Testing score           :  0.626
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.63      0.73      0.68       127
-     sadness       0.56      0.46      0.50       151
-       anger       0.66      0.76      0.71       150
-     boredom       0.62      0.60      0.61       124
-        fear       0.56      0.46      0.51       127
-   happiness       0.56      0.50      0.53       141
-     disgust       0.70      0.82      0.75       146
+     neutral       0.63      0.72      0.67       146
+       anger       0.54      0.49      0.51       127
+        fear       0.63      0.77      0.69       151
+     disgust       0.61      0.54      0.57       127
+     sadness       0.55      0.44      0.49       150
+     boredom       0.69      0.63      0.66       141
+   happiness       0.69      0.80      0.74       124
 
-    accuracy                           0.62       966
-   macro avg       0.61      0.62      0.61       966
-weighted avg       0.61      0.62      0.61       966
+    accuracy                           0.63       966
+   macro avg       0.62      0.63      0.62       966
+weighted avg       0.62      0.63      0.62       966
 
-Training's duration is 0.0028235912322998047
+Training's duration is 0.06
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Quadratic Discriminant Analysis
 ----------------------------------------------------------
-Cross-validation scores :  [0.6   0.644 0.667 0.578 0.578]
-Testing score           :  0.588
+Cross-validation scores :  [0.467 0.556 0.6   0.489 0.533]
+Testing score           :  0.567
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.56      0.75      0.64        12
-     sadness       0.70      0.47      0.56        15
-       anger       0.83      0.53      0.65        19
-     boredom       0.44      0.62      0.52        13
-        fear       0.45      0.38      0.42        13
-   happiness       0.47      0.64      0.54        11
-     disgust       0.73      0.79      0.76        14
+     neutral       0.69      0.64      0.67        14
+       anger       0.43      0.46      0.44        13
+        fear       0.55      0.73      0.63        15
+     disgust       0.38      0.50      0.43        12
+     sadness       0.69      0.47      0.56        19
+     boredom       0.54      0.64      0.58        11
+   happiness       0.88      0.54      0.67        13
 
-    accuracy                           0.59        97
-   macro avg       0.60      0.60      0.58        97
-weighted avg       0.62      0.59      0.59        97
+    accuracy                           0.57        97
+   macro avg       0.59      0.57      0.57        97
+weighted avg       0.60      0.57      0.57        97
 
-Training's duration is 0.001760244369506836
+Training's duration is 0.036
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Quadratic Discriminant Analysis
 ----------------------------------------------------------
-Cross-validation scores :  [0.749 0.741 0.745 0.736 0.742]
+Cross-validation scores :  [0.749 0.745 0.749 0.736 0.744]
+Testing score           :  0.732
+----------------------------------------------------------
+              precision    recall  f1-score   support
+
+     neutral       0.77      0.83      0.80       146
+       anger       0.64      0.62      0.63       127
+        fear       0.79      0.79      0.79       151
+     disgust       0.72      0.73      0.73       127
+     sadness       0.70      0.59      0.64       150
+     boredom       0.66      0.67      0.66       141
+   happiness       0.83      0.90      0.86       124
+
+    accuracy                           0.73       966
+   macro avg       0.73      0.73      0.73       966
+weighted avg       0.73      0.73      0.73       966
+
+Training's duration is 0.07
+----------------------------------------------------------
+******************* NO AUGMENTATION **********************
+----------------------------------------------------------
+Linear SVM
+----------------------------------------------------------
+Cross-validation scores :  [0.533 0.733 0.511 0.689 0.6  ]
+Testing score           :  0.608
+----------------------------------------------------------
+              precision    recall  f1-score   support
+
+     neutral       0.58      0.79      0.67        14
+       anger       0.52      0.85      0.65        13
+        fear       0.53      0.60      0.56        15
+     disgust       0.82      0.75      0.78        12
+     sadness       0.67      0.32      0.43        19
+     boredom       0.33      0.27      0.30        11
+   happiness       0.91      0.77      0.83        13
+
+    accuracy                           0.61        97
+   macro avg       0.62      0.62      0.60        97
+weighted avg       0.63      0.61      0.60        97
+
+Training's duration is 0.041
+----------------------------------------------------------
+******************* WITH AUGMENTATION ********************
+----------------------------------------------------------
+Linear SVM
+----------------------------------------------------------
+Cross-validation scores :  [0.703 0.703 0.674 0.712 0.718]
 Testing score           :  0.72
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.80      0.83      0.81       127
-     sadness       0.73      0.54      0.62       151
-       anger       0.72      0.77      0.75       150
-     boredom       0.66      0.69      0.67       124
-        fear       0.73      0.68      0.70       127
-   happiness       0.60      0.66      0.63       141
-     disgust       0.80      0.88      0.84       146
+     neutral       0.76      0.77      0.77       146
+       anger       0.56      0.65      0.60       127
+        fear       0.81      0.78      0.80       151
+     disgust       0.62      0.77      0.69       127
+     sadness       0.74      0.64      0.69       150
+     boredom       0.74      0.52      0.61       141
+   happiness       0.84      0.92      0.88       124
 
     accuracy                           0.72       966
    macro avg       0.72      0.72      0.72       966
-weighted avg       0.72      0.72      0.72       966
+weighted avg       0.73      0.72      0.72       966
 
-Training's duration is 0.03620648384094238
-----------------------------------------------------------
-******************* NO AUGMENTATION **********************
-----------------------------------------------------------
-Linear SVM
-----------------------------------------------------------
-Cross-validation scores :  [0.667 0.689 0.622 0.667 0.667]
-Testing score           :  0.546
-----------------------------------------------------------
-              precision    recall  f1-score   support
-
-     neutral       0.62      0.67      0.64        12
-     sadness       0.43      0.40      0.41        15
-       anger       0.67      0.42      0.52        19
-     boredom       0.41      0.54      0.47        13
-        fear       0.47      0.54      0.50        13
-   happiness       0.30      0.27      0.29        11
-     disgust       0.88      1.00      0.93        14
-
-    accuracy                           0.55        97
-   macro avg       0.54      0.55      0.54        97
-weighted avg       0.55      0.55      0.54        97
-
-Training's duration is 0.003542184829711914
-----------------------------------------------------------
-******************* WITH AUGMENTATION ********************
-----------------------------------------------------------
-Linear SVM
-----------------------------------------------------------
-Cross-validation scores :  [0.667 0.685 0.67  0.674 0.691]
-Testing score           :  0.702
-----------------------------------------------------------
-              precision    recall  f1-score   support
-
-     neutral       0.70      0.80      0.75       127
-     sadness       0.58      0.58      0.58       151
-       anger       0.85      0.75      0.79       150
-     boredom       0.66      0.68      0.67       124
-        fear       0.66      0.65      0.66       127
-   happiness       0.58      0.52      0.55       141
-     disgust       0.86      0.94      0.90       146
-
-    accuracy                           0.70       966
-   macro avg       0.70      0.70      0.70       966
-weighted avg       0.70      0.70      0.70       966
-
-Training's duration is 0.12519288063049316
+Training's duration is 0.755
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 MLP Classifier
 ----------------------------------------------------------
-Cross-validation scores :  [0.533 0.578 0.711 0.733 0.511]
-Testing score           :  0.629
+Cross-validation scores :  [0.444 0.644 0.511 0.711 0.6  ]
+Testing score           :  0.649
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.71      0.42      0.53        12
-     sadness       0.64      0.47      0.54        15
-       anger       0.88      0.74      0.80        19
-     boredom       0.43      0.46      0.44        13
-        fear       0.48      0.77      0.59        13
-   happiness       0.50      0.45      0.48        11
-     disgust       0.78      1.00      0.88        14
+     neutral       0.82      0.64      0.72        14
+       anger       0.62      0.38      0.48        13
+        fear       0.78      0.47      0.58        15
+     disgust       0.47      0.58      0.52        12
+     sadness       0.64      0.74      0.68        19
+     boredom       0.47      0.73      0.57        11
+   happiness       0.87      1.00      0.93        13
 
-    accuracy                           0.63        97
-   macro avg       0.63      0.62      0.61        97
-weighted avg       0.65      0.63      0.62        97
+    accuracy                           0.65        97
+   macro avg       0.67      0.65      0.64        97
+weighted avg       0.67      0.65      0.65        97
 
-Training's duration is 0.2682180404663086
+Training's duration is 1.105
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 MLP Classifier
 ----------------------------------------------------------
-Cross-validation scores :  [0.734 0.741 0.667 0.705 0.773]
-Testing score           :  0.812
+Cross-validation scores :  [0.716 0.743 0.769 0.732 0.724]
+Testing score           :  0.815
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.78      0.92      0.84       127
-     sadness       0.79      0.77      0.78       151
-       anger       0.83      0.83      0.83       150
-     boredom       0.75      0.86      0.80       124
-        fear       0.80      0.61      0.69       127
-   happiness       0.79      0.73      0.76       141
-     disgust       0.92      0.95      0.93       146
+     neutral       0.87      0.79      0.83       146
+       anger       0.71      0.78      0.74       127
+        fear       0.90      0.90      0.90       151
+     disgust       0.80      0.74      0.77       127
+     sadness       0.71      0.83      0.77       150
+     boredom       0.80      0.69      0.74       141
+   happiness       0.93      0.97      0.95       124
 
     accuracy                           0.81       966
-   macro avg       0.81      0.81      0.81       966
-weighted avg       0.81      0.81      0.81       966
+   macro avg       0.82      0.81      0.81       966
+weighted avg       0.82      0.81      0.81       966
 
-Training's duration is 2.129276752471924
+Training's duration is 10.028
 ----------------------------------------------------------
 ******************* NO AUGMENTATION **********************
 ----------------------------------------------------------
 Extra Trees Classifier
 ----------------------------------------------------------
-Cross-validation scores :  [0.644 0.6   0.578 0.644 0.6  ]
-Testing score           :  0.619
+Cross-validation scores :  [0.667 0.556 0.667 0.689 0.756]
+Testing score           :  0.588
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.60      0.50      0.55        12
-     sadness       0.67      0.40      0.50        15
-       anger       0.78      0.74      0.76        19
-     boredom       0.75      0.69      0.72        13
-        fear       0.36      0.38      0.37        13
-   happiness       0.43      0.55      0.48        11
-     disgust       0.70      1.00      0.82        14
+     neutral       0.75      0.86      0.80        14
+       anger       0.57      0.31      0.40        13
+        fear       0.62      0.87      0.72        15
+     disgust       0.50      0.33      0.40        12
+     sadness       0.67      0.32      0.43        19
+     boredom       0.35      0.73      0.47        11
+   happiness       0.77      0.77      0.77        13
 
-    accuracy                           0.62        97
-   macro avg       0.61      0.61      0.60        97
-weighted avg       0.63      0.62      0.61        97
+    accuracy                           0.59        97
+   macro avg       0.60      0.60      0.57        97
+weighted avg       0.62      0.59      0.57        97
 
-Training's duration is 0.14923906326293945
+Training's duration is 1.733
 ----------------------------------------------------------
 ******************* WITH AUGMENTATION ********************
 ----------------------------------------------------------
 Extra Trees Classifier
 ----------------------------------------------------------
-Cross-validation scores :  [0.905 0.902 0.909 0.898 0.902]
-Testing score           :  0.905
+Cross-validation scores :  [0.911 0.929 0.896 0.911 0.907]
+Testing score           :  0.924
 ----------------------------------------------------------
               precision    recall  f1-score   support
 
-     neutral       0.88      0.95      0.91       127
-     sadness       0.89      0.90      0.89       151
-       anger       0.99      0.91      0.95       150
-     boredom       0.85      0.87      0.86       124
-        fear       0.87      0.87      0.87       127
-   happiness       0.91      0.84      0.87       141
-     disgust       0.94      0.99      0.96       146
+     neutral       0.93      0.97      0.95       146
+       anger       0.86      0.91      0.88       127
+        fear       0.97      0.90      0.93       151
+     disgust       0.90      0.96      0.93       127
+     sadness       0.96      0.87      0.92       150
+     boredom       0.91      0.91      0.91       141
+   happiness       0.94      0.96      0.95       124
 
-    accuracy                           0.90       966
-   macro avg       0.90      0.90      0.90       966
-weighted avg       0.91      0.90      0.90       966
+    accuracy                           0.92       966
+   macro avg       0.92      0.93      0.92       966
+weighted avg       0.93      0.92      0.92       966
 
-Training's duration is 0.1309211254119873
+Training's duration is 2.14

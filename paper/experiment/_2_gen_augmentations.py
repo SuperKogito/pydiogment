@@ -38,7 +38,7 @@ def augment_file(test_file):
 
     try:
         auga.fade_in_and_out(test_file)
-    except:
+    except Exception:
         print("cannot %10s for %20s" % ("fade_in_and_out", test_file))
 
     try:
