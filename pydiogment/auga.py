@@ -59,7 +59,7 @@ def add_noise(infile, snr):
     noise_factor = (sig_power / noise_power) * (1 / snr_linear)
 
     # add noise
-    y = sig + np.sqrt(noise) * noise_factor
+    y = sig + np.sqrt(noise_factor) * noise
 
     # construct file names
     output_file_path = os.path.dirname(infile)
