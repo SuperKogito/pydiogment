@@ -110,16 +110,16 @@ Then we re-run the same recognition algorithms on the augmented and original dat
         \hline
         Machine learning Algorithm  & Accuracy (no augmentation) & Accuracy (with augmentation)\\
         \hline\hline
-        AdaBoost                        &             0.309          &           0.509              \\
-        Decision Tree                   &             0.433          &           0.788              \\
-        Extra Trees Classifier          &             0.639          &           0.924              \\
-        Gaussian Process                &             0.186          &           0.670              \\
-        KNN                             &             0.639          &           0.854              \\
-        Linear SVM                      &             0.608          &           0.681              \\
-        MLP Classifier                  &             0.732          &           0.826              \\
-        Naive Bayes                     &             0.588          &           0.634              \\
-        QDA                             &             0.629          &           0.746              \\
-        Random Forest                   &             0.619          &           0.895              \\
+        AdaBoost                        &             0.309          &           0.513              \\
+        Decision Tree                   &             0.454          &           0.764              \\
+        Extra Trees Classifier          &             0.588          &           0.916              \\
+        Gaussian Process                &             0.247          &           0.700              \\
+        KNN                             &             0.629          &           0.867              \\
+        Linear SVM                      &             0.608          &           0.693              \\
+        MLP Classifier                  &             0.608          &           0.811              \\
+        Naive Bayes                     &             0.577          &           0.610              \\
+        QDA                             &             0.608          &           0.764              \\
+        Random Forest                   &             0.567          &           0.929              \\
         \hline
     \end{tabular}
 \caption{Accuracy comparison of results with and without data augmentation.}
