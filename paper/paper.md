@@ -19,17 +19,12 @@ affiliations:
    index: 2
 date: 25 February 2020
 bibliography: paper.bib
-
-# Optional fields if submitting to a AAS journal too, see this blog post:
-# https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-aas-journal: The Journal of Open Source Software
 ---
 
 # Summary
 Audio data augmentation is a key step in training Machine Learning (ML) models to solve audio classification tasks.
-It is applied to increase the quality and size of the labeled training data-set, in order to improve the recognition accuracy.
-Data augmentation is simply a deformation technique, that helps stretch the data, and increase its size for a better training.
+It is applied to increase the quality and size of the labeled training dataset, in order to improve the recognition accuracy.
+Data augmentation is simply a deformation technique that helps stretch the data and increases its size for better training.
 Unlike image augmentation, audio augmentation is still limitly explored by research and most deformation strategies manipulate the computed spectograms rather than the raw audio. With the exception of few libraries constrained to work with Pytorch [@pytorch:2019], most existing tools in this context either act on spectograms such as Google's Specaugment [@specaugment:2019], or are developed for music data augmentation like muda [@muda:2015]. This paper describes version 0.1.0 of `Pydiogment`: a Python package for audio augmentation based on the Scipy [@scipy:2019] and FFmpeg [@ffmpeg:2019] libraries.
 `Pydiogment` implements various augmentation techniques that can be used to improve the accuracy of various recognition tasks (speaker recognition, spoken emotions recognition, speech recognition etc.) and avoid over-fitting when training models.
 The paper provides a brief overview of the library’s functionality, along with an emotions recognition experiment displaying the utility of the library.
@@ -56,7 +51,7 @@ The paper provides a brief overview of the library’s functionality, along with
 
   - **Convolve:**  This is also called reverberating the audio and it consists of a convolution of the original signal with a given Room Impulse Response (RIR) to simulate an audio captured using far-field microphones in a different setup/channel $y[n] = x[n] * rir[n]$, where $x[n]$ is the original signal, $y[n]$ is the augmented signal and $rir[n]$ is the room impulse response [@raju:2018].
 
-  - **Apply Filter:** apply various types of Scipy based Butterworth filters (low-pass, high-pass or band-pass).
+  - **Apply Filter:** apply various types of Scipy-based Butterworth filters (low-pass, high-pass or band-pass).
 
   \begin{figure}[!htb]
       \minipage{0.32\textwidth}
@@ -72,7 +67,7 @@ The paper provides a brief overview of the library’s functionality, along with
   \end{figure}
 
 ## Time based augmentation (`augt.py`)
-  - **Stretch Time:** also known as time compression/expansion, it is reciprocal to pitch shifting. Essentially the audio is slowed-down or accelerated based on a given coefficient [@bernsee:2005].
+  - **Stretch Time:** also known as time compression/expansion, it is reciprocal to pitch shifting. Essentially the audio is slowed down or accelerated based on a given coefficient [@bernsee:2005].
 
   - **Shift Time:**  this includes shifting the signal in a certain time direction to create augmented signals with different chronological orders, and also reversing the whole signal.
 
@@ -83,12 +78,12 @@ The paper provides a brief overview of the library’s functionality, along with
   - **Resample:** with the help of Scipy, the input signal is resampled given an input sampling rate with respect to the  Nyquist–Shannon sampling theorem.
 
 The aforementioned augmentation strategies can be combined to generate various sub-strategies.
-However, it is very crucial to maintain the semantic validity when augmenting the data.
-*For example:* one cannot change tones when doing voice based gender classification and still expect tone to be a separating feature of the predicted classes.
+However, it is very crucial to maintain semantic validity when augmenting the data.
+*For example:* one cannot change tones when doing voice-based gender classification and still expect tone to be a separating feature of the predicted classes.
 
 # Experiment & Results
 To prove the utility of `Pydiogment`, we display its effect on a spoken emotions recognition task.
-We use the **Emo-DB** data-set  [@Burkhardt:2005] as a starting point, which is a small German audio data-set simulating 7 different emotions (neutral, sadness, anger, boredom, fear, happiness, disgust). We choose the Mel-Frequency Cepstral Coefficients (MFCCs) [@milner:2006] as the characterizing low-level audio features due to previous proved success on similar problems [@kandali:2008; @kishore:2013; @sreeram:2015; @dahake:2016]. The features are extracted using the python_speech_features library [@jameslyons:2020]. In a first phase and using the scikit-learn library [@scikitlearn:2011], we apply various recognition algorithms on the original data such as K-Nearest Neighbors (KNN), random forests, decision trees, Quadratic Discriminant Analysis (QDA), Support Vector Machines (SVM) etc.
+We use the **Emo-DB** data-set  [@Burkhardt:2005] as a starting point, which is a small German audio dataset simulating 7 different emotions (neutral, sadness, anger, boredom, fear, happiness, disgust). We choose the Mel-Frequency Cepstral Coefficients (MFCCs) [@milner:2006] as the characterizing low-level audio features due to previous proved success on similar problems [@kandali:2008; @kishore:2013; @sreeram:2015; @dahake:2016]. The features are extracted using the python_speech_features library [@jameslyons:2020]. In a first phase and using the scikit-learn library [@scikitlearn:2011], we apply various recognition algorithms on the original data such as K-Nearest Neighbors (KNN), random forests, decision trees, Quadratic Discriminant Analysis (QDA), Support Vector Machines (SVM) etc.
 In a second phase, we augment the data using `Pydiogment` by applying the following techniques:
 
 - slow down samples using a coefficient of $0.8$.
@@ -127,7 +122,7 @@ Then we re-run the same recognition algorithms on the augmented and original dat
 
 # Conclusion
 This paper introduced `Pydiogment`, a Python package for audio data augmentation, with diverse audio deformation strategies.
-These strategies aim to improve the accuracy of audio based recognition system by scaling the training data-set and increasing its quality/diversity.
+These strategies aim to improve the accuracy of audio based recognition system by scaling the training dataset and increasing its quality/diversity.
 The utility of `Pydiogment` was proved by showing its effects when used in a spoken emotions recognition task.
 In the stated experiment, the augmentation using `Pydiogment` improved the accuracy up to 50%.
 
