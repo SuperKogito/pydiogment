@@ -19,15 +19,29 @@ Dependencies
 
 -	[Python](https://www.python.org/download/releases/3.0/) (>= 3.5)  
 -	[NumPy](https://numpy.org/) (>= 1.17.2)
-  `pip install numpy`
-
+  
 -	[SciPy](https://www.scipy.org/)  (>= 1.3.1)
-  `pip install scipy`
-
 
 - [FFmpeg](https://www.ffmpeg.org/)
-  `sudo apt install ffmpeg`
 
+### On Linux
+On Linux you can use the following commands to get the libraries:
+- Numpy: `pip install numpy`
+- Scipy:  `pip install scipy`
+- FFmpeg: `sudo apt install ffmpeg`
+
+### On Windows
+On Windows you can use the following installation binaries:
+- Numpy: https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy or if you have Python already installed you can use install it using `pip3 install numpy`
+- Scipy: https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy
+- FFmpeg: https://ffmpeg.org/download.html#build-windows
+
+### On MacOS
+On MacOs, use homebrew to install the packages:
+- Numpy:  `brew install numpy --with-python3`
+- Scipy:  You need to first install a compilation tool like Gfortran using homebrew `brew install gfortran` when it's done, install Scipy `pip install scipy`
+for more information and guidelines you can check this link: https://github.com/scipy/scipy/blob/master/INSTALL.rst.txt#mac-os-x
+- FFmpeg: `brew install ffmpeg`
 
 
 Installation
@@ -108,15 +122,20 @@ pip install -U pydiogment
     shift_time(test_file, 1, "right")
     shift_time(test_file, 1, "left")
     ```
+- ## Audio files format 
+This library currently supports mono WAV files only.
 
 :bookmark_tabs:  Documentation  
 ==============
 A thorough documentation of the library is available under [pydiogment.readthedocs.io](https://pydiogment.readthedocs.io/en/latest/index.html).
 
-:construction_worker:	 Contributing        
+:construction_worker:	 Contributing and bugs report      
 ============
 
 Contributions are welcome and encouraged. To learn more about how to contribute to **Pydiogment** please refer to the [Contributing guidelines](https://github.com/SuperKogito/pydiogment/blob/master/CONTRIBUTING.md)
+
+To report bugs, request a feature or just ask for help you can refer to the [issues](https://github.com/SuperKogito/pydiogment/issuesif) section.
+Before reporting a bug please make sure it is not addressed by an older issue and make sure to add your operating system type, its version number and the versions of the dependencies used.
 
 :tada:	Acknowledgment and credits     
 ============================
