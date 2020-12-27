@@ -7,6 +7,7 @@ Welcome to pydiogment's documentation!
 ======================================
 
 .. toctree::
+   :maxdepth: 4
 
    dependencies
    code
@@ -16,4 +17,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`

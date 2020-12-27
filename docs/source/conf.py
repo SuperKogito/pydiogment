@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.abspath('../../pydiogment/'))
 project = 'pydiogment'
 copyright = '2020, Ayoub Malek'
 author = 'Ayoub Malek'
+html_favicon = '_static/favicon.ico'
 
 # The short X.Y version
 version = ''
@@ -32,6 +33,9 @@ release = '0.0.1'
 
 
 # -- General configuration ---------------------------------------------------
+def setup(app):
+    app.add_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    app.add_stylesheet("css/cstyle.css")
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #
@@ -90,14 +94,14 @@ import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
                         'canonical_url': '',
-                        'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+                        'analytics_id': 'UA-133660046-1',  #  Provided by Google in your dashboard
                         'logo_only': True,
                         'display_version': True,
                         'prev_next_buttons_location': 'bottom',
                         'style_external_links': False,
                         # Toc options
-                        'collapse_navigation': True,
-                        'sticky_navigation': True,
+                        'collapse_navigation': False,
+                        'sticky_navigation': False,
                         'navigation_depth': 4,
                         'includehidden': True,
                         'titles_only': False

@@ -4,13 +4,12 @@ Dependencies and installation
 Dependencies
 ------------
 
-pydiogment is build on Python3_  and it requires the following:
+pydiogment is build on Python3_  and it requires the following Python packages:
 
--	Python packages:
   -	NumPy_ (>= 1.17.2) :  ``pip install numpy``
   -	SciPy_  (>= 1.3.1) :  ``pip install scipy``
 
-  Or you can simply use the requirements file in ``pip install -r requirements.txt``
+Or you can simply use the requirements file in ``pip install -r requirements.txt``
 
 - Pydiogment also requires FFmpeg_, which you can install using: ``sudo apt install ffmpeg``
 
