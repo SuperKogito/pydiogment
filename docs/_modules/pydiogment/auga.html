@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pydiogment.auga &mdash; pydiogment 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/cstyle.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+  <h1 class="pages_title">Pydiogment documentation</h1>
+  <div class="sub-title-menu" bis_skin_checked="1">
+  <table class="menu-table" id="menuTable" style="border:hidden;">
+  <tbody><tr>
+  <th>
+  </th><th>
+  </th><th class="icon"> <a href="https://superkogito.github.io/index.html" title="Home"><i class="fa fa-home"></i></a> </th>
+  <th class="menu-label"> <a href="https://superkogito.github.io/index.html" title="Home">Home</a> </th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"><a href="https://superkogito.github.io/posts.html" title="Posts"><i class="fa fa-bars"></i></a></th>
+  <th class="menu-label"><a href="https://superkogito.github.io/posts.html" title="Posts">Posts</a></th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"> <a href="https://superkogito.github.io/publications.html" title="pubs"><i class="fa fa-file-text"></i></a></th>
+  <th class="menu-label"> <a href="https://superkogito.github.io/publications.html" title="pubs">Publications</a></th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"> <a href="https://superkogito.github.io/projects.html" title="projects"><i class="fa fa-code"></i></a></th>
+  <th class="menu-label"> <a href="https://superkogito.github.io/projects.html" title="projects">Projects</a></th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"> <a href="https://superkogito.github.io/games.html" title="Games"><i class="fa fa-gamepad"></i></a></th>
+  <th class="menu-label"> <a href="https://superkogito.github.io/games.html" title="Games">Games</a></th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"><a href="https://superkogito.github.io/about.html" title="About"><i class="fa fa-user-circle"></i></a></th>
+  <th class="menu-label"><a href="https://superkogito.github.io/about.html" title="About">About</a></th>
+
+
+  <th>
+  </th><th>
+  </th><th class="icon"> <a href="#" onclick="modeSwitcher()"><i class="fa fa-adjust"></i></a></th>
+  <th class="menu-label"> <a href="#" onclick="modeSwitcher()"><text id="theme-toggle">Light Mode</text></a></th>
+
+
+  </tr>
+  </tbody></table>
+  </div>
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/icon.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dependencies.html">Dependencies and installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dependencies.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dependencies.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../code.html">Code Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../auga.html">pydiogment.auga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../augf.html">pydiogment.augf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../augt.html">pydiogment.augt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">pydiogment.utils.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../filters.html">pydiogment.utils.filters</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pydiogment</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>pydiogment.auga</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+      <a href="https://github.com/SuperKogito/pydiogment" title="About"><i class="fa fa-github"></i></a>
+      <a href="https://github.com/SuperKogito/pydiogment" title="About">Pydiogment source code</a></th>
+
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pydiogment.auga</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">- Description: amplitude based augmentation techniques/manipulations for audio data.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.utils.io</span> <span class="kn">import</span> <span class="n">read_file</span><span class="p">,</span> <span class="n">write_file</span>
+
+
+<div class="viewcode-block" id="apply_gain"><a class="viewcode-back" href="../../auga.html#pydiogment.auga.apply_gain">[docs]</a><span class="k">def</span> <span class="nf">apply_gain</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">gain</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply gain to infile.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        - infile (str) : input filename/path.</span>
+<span class="sd">        - gain (float) : gain in dB (both positive and negative).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># read input file</span>
+    <span class="n">fs</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="c1"># apply gain</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">gain</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+    <span class="c1"># export data to file</span>
+    <span class="n">output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">name_attribute</span> <span class="o">=</span> <span class="s2">&quot;_augmented_with_</span><span class="si">%s</span><span class="s2">_gain.wav&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">gain</span><span class="p">)</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">output_file_path</span><span class="o">=</span><span class="n">output_file_path</span><span class="p">,</span>
+               <span class="n">input_file_name</span><span class="o">=</span><span class="n">infile</span><span class="p">,</span>
+               <span class="n">name_attribute</span><span class="o">=</span><span class="n">name_attribute</span><span class="p">,</span>
+               <span class="n">sig</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+               <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="add_noise"><a class="viewcode-back" href="../../auga.html#pydiogment.auga.add_noise">[docs]</a><span class="k">def</span> <span class="nf">add_noise</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">snr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Augment data using noise injection.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        It simply add some random values to the input file data based on the snr.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        - infile (str) : input filename/path.</span>
+<span class="sd">        - snr    (int) : signal to noise ratio in dB.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># read input file</span>
+    <span class="n">fs</span><span class="p">,</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="c1"># compute and apply noise</span>
+    <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
+
+    <span class="c1"># compute powers</span>
+    <span class="n">noise_power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">noise</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">sig_power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># compute snr and scaling factor</span>
+    <span class="n">snr_linear</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">snr</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">)</span>
+    <span class="n">noise_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">sig_power</span> <span class="o">/</span> <span class="n">noise_power</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">snr_linear</span><span class="p">)</span>
+
+    <span class="c1"># add noise</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">noise_factor</span><span class="p">)</span> <span class="o">*</span> <span class="n">noise</span>
+
+    <span class="c1"># construct file names</span>
+    <span class="n">output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">name_attribute</span> <span class="o">=</span> <span class="s2">&quot;_augmented_</span><span class="si">%s</span><span class="s2">_noisy.wav&quot;</span> <span class="o">%</span> <span class="n">snr</span>
+
+    <span class="c1"># export data to file</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">output_file_path</span><span class="o">=</span><span class="n">output_file_path</span><span class="p">,</span>
+               <span class="n">input_file_name</span><span class="o">=</span><span class="n">infile</span><span class="p">,</span>
+               <span class="n">name_attribute</span><span class="o">=</span><span class="n">name_attribute</span><span class="p">,</span>
+               <span class="n">sig</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+               <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="fade_in_and_out"><a class="viewcode-back" href="../../auga.html#pydiogment.auga.fade_in_and_out">[docs]</a><span class="k">def</span> <span class="nf">fade_in_and_out</span><span class="p">(</span><span class="n">infile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add a fade in and out effect to the audio file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        - infile (str) : input filename/path.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># read input file</span>
+    <span class="n">fs</span><span class="p">,</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hamming</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
+
+    <span class="c1"># construct file names</span>
+    <span class="n">output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">name_attribute</span> <span class="o">=</span> <span class="s2">&quot;_augmented_fade_in_out.wav&quot;</span>
+
+    <span class="c1"># fade in and out</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hamming</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
+    <span class="n">augmented_sig</span> <span class="o">=</span> <span class="n">window</span> <span class="o">*</span> <span class="n">sig</span>
+    <span class="n">augmented_sig</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">augmented_sig</span><span class="p">))</span>
+
+    <span class="c1"># export data to file</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">output_file_path</span><span class="o">=</span><span class="n">output_file_path</span><span class="p">,</span>
+               <span class="n">input_file_name</span><span class="o">=</span><span class="n">infile</span><span class="p">,</span>
+               <span class="n">name_attribute</span><span class="o">=</span><span class="n">name_attribute</span><span class="p">,</span>
+               <span class="n">sig</span><span class="o">=</span><span class="n">augmented_sig</span><span class="p">,</span>
+               <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="normalize"><a class="viewcode-back" href="../../auga.html#pydiogment.auga.normalize">[docs]</a><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">normalization_technique</span><span class="o">=</span><span class="s2">&quot;peak&quot;</span><span class="p">,</span> <span class="n">rms_level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize the signal given a certain technique (peak or rms).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        - infile                  (str) : input filename/path.</span>
+<span class="sd">        - normalization_technique (str) : type of normalization technique to use. (default is peak)</span>
+<span class="sd">        - rms_level               (int) : rms level in dB.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># read input file</span>
+    <span class="n">fs</span><span class="p">,</span> <span class="n">sig</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">infile</span><span class="p">)</span>
+
+    <span class="c1"># normalize signal</span>
+    <span class="k">if</span> <span class="n">normalization_technique</span> <span class="o">==</span> <span class="s2">&quot;peak&quot;</span> <span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">normalization_technique</span> <span class="o">==</span> <span class="s2">&quot;rms&quot;</span><span class="p">:</span>
+        <span class="c1"># linear rms level and scaling factor</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="n">rms_level</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="c1"># normalize</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">sig</span> <span class="o">*</span> <span class="n">a</span>
+
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ParameterError: Unknown normalization_technique variable.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># construct file names</span>
+    <span class="n">output_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+    <span class="n">name_attribute</span> <span class="o">=</span> <span class="s2">&quot;_augmented_</span><span class="si">{}</span><span class="s2">_normalized.wav&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">normalization_technique</span><span class="p">)</span>
+
+    <span class="c1"># export data to file</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">output_file_path</span><span class="o">=</span><span class="n">output_file_path</span><span class="p">,</span>
+               <span class="n">input_file_name</span><span class="o">=</span><span class="n">infile</span><span class="p">,</span>
+               <span class="n">name_attribute</span><span class="o">=</span><span class="n">name_attribute</span><span class="p">,</span>
+               <span class="n">sig</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+               <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+
+  <div class="footertag">
+      ©2020, Ayoub Malek.
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href=https://github.com/rtfd/sphinx_rtd_theme">Read the Docs theme</a>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/gh/SuperKogito/SuperKogito.github.io/_static/js/mode-switcher.js"></script>
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-133660046-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+</body>
+</html>
