@@ -1,391 +1,496 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>pydiogment.augt &mdash; pydiogment 0.0.1 documentation</title>
-  
 
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/cstyle.css" type="text/css" />
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  
-  
+    <title>pydiogment.augt &#8212; 🧠 SuperKogito/pydiogment 0.0.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/tree_graph.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/social_media_sharing.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pydiogment.utils.io" href="io.html" />
-    <link rel="prev" title="pydiogment.augf" href="augf.html" /> 
-</head>
+    <link rel="prev" title="pydiogment.augf" href="augf.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-<body class="wy-body-for-nav">
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-133660046-1', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
 
-  <h1 class="pages_title">Pydiogment documentation</h1>
-  <div class="sub-title-menu" bis_skin_checked="1">
-  <table class="menu-table" id="menuTable" style="border:hidden;">
-  <tbody><tr>
-  <th>
-  </th><th>
-  </th><th class="icon"> <a href="https://superkogito.github.io/index.html" title="Home"><i class="fa fa-home"></i></a> </th>
-  <th class="menu-label"> <a href="https://superkogito.github.io/index.html" title="Home">Home</a> </th>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
 
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
 
-  <th>
-  </th><th>
-  </th><th class="icon"><a href="https://superkogito.github.io/posts.html" title="Posts"><i class="fa fa-bars"></i></a></th>
-  <th class="menu-label"><a href="https://superkogito.github.io/posts.html" title="Posts">Posts</a></th>
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">🧠 SuperKogito/pydiogment</p>
+</a>
 
-
-  <th>
-  </th><th>
-  </th><th class="icon"> <a href="https://superkogito.github.io/publications.html" title="pubs"><i class="fa fa-file-text"></i></a></th>
-  <th class="menu-label"> <a href="https://superkogito.github.io/publications.html" title="pubs">Publications</a></th>
-
-
-  <th>
-  </th><th>
-  </th><th class="icon"> <a href="https://superkogito.github.io/projects.html" title="projects"><i class="fa fa-code"></i></a></th>
-  <th class="menu-label"> <a href="https://superkogito.github.io/projects.html" title="projects">Projects</a></th>
-
-
-  <th>
-  </th><th>
-  </th><th class="icon"> <a href="https://superkogito.github.io/games.html" title="Games"><i class="fa fa-gamepad"></i></a></th>
-  <th class="menu-label"> <a href="https://superkogito.github.io/games.html" title="Games">Games</a></th>
-
-
-  <th>
-  </th><th>
-  </th><th class="icon"><a href="https://superkogito.github.io/about.html" title="About"><i class="fa fa-user-circle"></i></a></th>
-  <th class="menu-label"><a href="https://superkogito.github.io/about.html" title="About">About</a></th>
-
-
-  <th>
-  </th><th>
-  </th><th class="icon"> <a href="#" onclick="modeSwitcher()"><i class="fa fa-adjust"></i></a></th>
-  <th class="menu-label"> <a href="#" onclick="modeSwitcher()"><text id="theme-toggle">Light Mode</text></a></th>
-
-
-  </tr>
-  </tbody></table>
+    
   </div>
 
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html">
-          
-
-          
-            
-            <img src="_static/icon.png" class="logo" alt="Logo"/>
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Dependencies and installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dependencies.html#dependencies">Dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dependencies.html#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="code.html">Code Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="auga.html">pydiogment.auga</a></li>
-<li class="toctree-l2"><a class="reference internal" href="augf.html">pydiogment.augf</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">pydiogment.augt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html">pydiogment.utils.io</a></li>
-<li class="toctree-l2"><a class="reference internal" href="filters.html">pydiogment.utils.filters</a></li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pydiogment</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="code.html">Code Documentation</a> &raquo;</li>
-        
-      <li>pydiogment.augt</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/SuperKogito/pydiogment" title="About"><i class="fa fa-github"></i></a>
-      <a href="https://github.com/SuperKogito/pydiogment" title="About">Pydiogment source code</a></th>
-
-      </li>
-    
-  </ul>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   
-  <hr/>
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://superkogito.github.io/index.html">Home<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://superkogito.github.io/projects.html">Projects<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://superkogito.github.io/blog.html">Blog<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://superkogito.github.io/about.html">About Me<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="code.html">
+  📄 API Documentation
+ </a>
+</li>
+
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this site..." aria-label="Search this site..." autocomplete="off" >
+</form>
+      </div>
+      
+      <div class="navbar-end-item">
+        <div class="dropdown" id="version_switcher">
+    <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="version_switcher_button" data-toggle="dropdown">
+        None  <!-- this text may get changed later by javascript -->
+        <span class="caret"></span>
+    </button>
+    <div id="version_switcher_menu" class="dropdown-menu list-group-flush py-0" aria-labelledby="version_switcher_button">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+
+<!-- NOTE: this JS must live here (not in our global JS file) because it relies
+     on being processed by Jinja before it is run (specifically for replacing
+     variables augt and {'json_url': 'https://pandas.pydata.org/versions.json', 'url_template': 'https://pandas.pydata.org/{version}/'}.
+-->
+
+<script type="text/javascript">
+// Check if corresponding page path exists in other version of docs
+// and, if so, go there instead of the homepage of the other docs version
+function checkPageExistsAndRedirect(event) {
+    const currentFilePath = "augt.html",
+          tryUrl = event.target.getAttribute("href");
+    let otherDocsHomepage = tryUrl.replace(currentFilePath, "");
+    $.ajax({
+        type: 'HEAD',
+        url: tryUrl,
+        // if the page exists, go there
+        success: function() {
+            location.href = tryUrl;
+        }
+    }).fail(function() {
+        location.href = otherDocsHomepage;
+    });
+    // this prevents the browser from following the href of the clicked node
+    // (which is fine because this function takes care of redirecting)
+    return false;
+}
+
+// Populate the version switcher from the JSON config file
+(function () {
+    $.getJSON("https://pandas.pydata.org/versions.json", function(data, textStatus, jqXHR) {
+        const currentFilePath = "augt.html";
+        // create links to the corresponding page in the other docs versions
+        $.each(data, function(index, entry) {
+            // if no custom name specified (e.g., "latest"), use version string
+            if (!("name" in entry)) {
+                entry.name = entry.version;
+            }
+            // create the node
+            const node = document.createElement("a");
+            node.setAttribute("class", "list-group-item list-group-item-action py-1");
+            node.textContent = `${entry.name}`;
+            node.setAttribute("href", `${entry.url}${currentFilePath}`);
+            // on click, AJAX calls will check if the linked page exists before
+            // trying to redirect, and if not, will redirect to the homepage
+            // for that version of the docs.
+            node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
+            $("#version_switcher_menu").append(node);
+            // replace dropdown button text with the preferred display name of
+            // this version, rather than using sphinx's  variable.
+            // also highlight the dropdown entry for the currently-viewed
+            // version's entry
+            if (entry.version == "None") {
+                node.classList.add("active");
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
+            }
+        });
+    });
+})();
+</script>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/superkogito/" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
             
-  <div class="section" id="module-pydiogment.augt">
-<span id="pydiogment-augt"></span><h1>pydiogment.augt<a class="headerlink" href="#module-pydiogment.augt" title="Permalink to this headline">¶</a></h1>
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><div class="profile-pic"><img src="_static/logo1.png" /></div>
+
+<div class="bio-info">
+  <div class="name">
+  </div>
+  <div class="focusareas">
+    🔉 Pydiogment: Python auDio auGmentation 〰️
+  </div>
+</div>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auga.html">
+   pydiogment.auga
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="augf.html">
+   pydiogment.augf
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   pydiogment.augt
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="io.html">
+   pydiogment.utils.io
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="filters.html">
+   pydiogment.utils.filters
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+
+
+<!--  Bootstrap HTML  -->
+<div id="lawmsg" class="alert alert-info alert-dismissible h5 fade show fixed-bottom" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    We use cookies on this website to distinguish you from other users.
+    We use this data to improve our content experience and for targeted advertising.
+    By continuing to use this website you consent to our use of cookies.
+    For more information, please see our
+    <a href="https://superkogito.github.io/policy/cookies_policy.html" target="_blank">Cookie Policy</a>.
+</div>
+
+
+
+              <div>
+                
+  <section id="module-pydiogment.augt">
+<span id="pydiogment-augt"></span><h1>pydiogment.augt<a class="headerlink" href="#module-pydiogment.augt" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Description: time based augmentation techniques/manipulations for audio data.</p></li>
 </ul>
 <dl class="py function">
-<dt id="pydiogment.augt.eliminate_silence">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">eliminate_silence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infile</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#eliminate_silence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.eliminate_silence" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pydiogment.augt.eliminate_silence">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">eliminate_silence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#eliminate_silence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.eliminate_silence" title="Permalink to this definition">#</a></dt>
 <dd><p>Eliminate silence from voice file using ffmpeg library.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile  (str) : Path to get the original voice file from.</p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Path to get the original voice file from.</p>
 </dd>
-<dt>Returns:</dt><dd><p>list including True for successful authentication, False otherwise and
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list including True for successful authentication, False otherwise and
 a percentage value representing the certainty of the decision.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pydiogment.augt.random_cropping">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">random_cropping</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infile</span></em>, <em class="sig-param"><span class="n">min_len</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#random_cropping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.random_cropping" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pydiogment.augt.random_cropping">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">random_cropping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#random_cropping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.random_cropping" title="Permalink to this definition">#</a></dt>
 <dd><p>Crop the infile with an input minimum duration.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile    (str) : Input filename.</p></li>
-<li><p>min_len (float) : Minimum duration for randomly cropped excerpt</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Input filename.</p></li>
+<li><p><strong>min_len</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – Minimum duration for randomly cropped excerpt</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pydiogment.augt.resample_audio">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">resample_audio</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infile</span></em>, <em class="sig-param"><span class="n">sr</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#resample_audio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.resample_audio" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pydiogment.augt.resample_audio">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">resample_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#resample_audio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.resample_audio" title="Permalink to this definition">#</a></dt>
 <dd><p>Resample the signal according a new input sampling rate with respect to the
 Nyquist-Shannon theorem.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile (str) : input filename/path.</p></li>
-<li><p>sr     (int) : new sampling rate.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – input filename/path.</p></li>
+<li><p><strong>sr</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – new sampling rate.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pydiogment.augt.reverse">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">reverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infile</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#reverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.reverse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pydiogment.augt.reverse">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.reverse" title="Permalink to this definition">#</a></dt>
 <dd><p>Inverses the input signal to play from the end to the beginning and writes it
 to an output file</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile (str): Input filename.</p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Input filename.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="pydiogment.augt.shift_time">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">shift_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">infile</span></em>, <em class="sig-param"><span class="n">tshift</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#shift_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.shift_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pydiogment.augt.shift_time">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">shift_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#shift_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.shift_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Augment audio data by shifting the time in the file. Signal can be shifted
 to the left or right.</p>
-<dl class="simple">
-<dt>Note:</dt><dd><p>Time shifting is simply moving the audio to left/right with a random second.
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Time shifting is simply moving the audio to left/right with a random second.
 If shifting audio to left (fast forward) with x seconds, first x seconds will mark as 0 (i.e. silence).
 If shifting audio to right (back forward) with x seconds, last x seconds will mark as 0 (i.e. silence).</p>
-</dd>
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile    (str) : Input filename.</p></li>
-<li><p>tshift    (int) : Signal time shift in seconds.</p></li>
-<li><p>direction (str) : shift direction (to the left or right).</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="pydiogment.augt.slow_down">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">slow_down</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em>, <em class="sig-param"><span class="n">coefficient</span><span class="o">=</span><span class="default_value">0.8</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#slow_down"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.slow_down" title="Permalink to this definition">¶</a></dt>
-<dd><p>Slow or stretch a wave.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile        (str) : Input filename.</p></li>
-<li><p>coefficient (float) : coefficient caracterising the slowing degree.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="pydiogment.augt.speed">
-<code class="sig-prename descclassname">pydiogment.augt.</code><code class="sig-name descname">speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_file</span></em>, <em class="sig-param"><span class="n">coefficient</span><span class="o">=</span><span class="default_value">1.25</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#speed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pydiogment.augt.speed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Speed or shrink a wave.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>infile        (str) : Input filename.</p></li>
-<li><p>coefficient (float) : coefficient caracterising the speeding degree.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Input filename.</p></li>
+<li><p><strong>tshift</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – Signal time shift in seconds.</p></li>
+<li><p><strong>direction</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – shift direction (to the left or right).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydiogment.augt.slow_down">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">slow_down</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#slow_down"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.slow_down" title="Permalink to this definition">#</a></dt>
+<dd><p>Slow or stretch a wave.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Input filename.</p></li>
+<li><p><strong>coefficient</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – coefficient caracterising the slowing degree.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydiogment.augt.speed">
+<span class="sig-prename descclassname"><span class="pre">pydiogment.augt.</span></span><span class="sig-name descname"><span class="pre">speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.25</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pydiogment/augt.html#speed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydiogment.augt.speed" title="Permalink to this definition">#</a></dt>
+<dd><p>Speed or shrink a wave.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>infile</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – Input filename.</p></li>
+<li><p><strong>coefficient</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – coefficient caracterising the speeding degree.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 
 
-           </div>
-           
-          </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="io.html" class="btn btn-neutral float-right" title="pydiogment.utils.io" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="augf.html" class="btn btn-neutral float-left" title="pydiogment.augf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+              </div>
+              
+<!-- Add a comment box underneath the page's content -->
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-
-    </p>
-  </div>
-
-  <div class="footertag">
-      ©2020, Ayoub Malek.
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
-      &amp; <a href=https://github.com/rtfd/sphinx_rtd_theme">Read the Docs theme</a>
-  </div> 
-
-</footer>
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="augf.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">pydiogment.augf</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="io.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pydiogment.utils.io</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
       </div>
-
-    </section>
-
-  </div>
+    </div>
   
-  <script src="https://cdn.jsdelivr.net/gh/SuperKogito/SuperKogito.github.io/_static/js/mode-switcher.js"></script>
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(false);
-      });
-  </script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+      <!-- Site footer -->
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <ul class="footer-links">
+              <li>
+                    &copy; Copyright 2019-2022, Ayoub Malek.<br/>
+                  This blog is created using <a href="http://sphinx-doc.org/">Sphinx</a> and the tools from <a href="https://executablebooks.org/en/latest/">The Executable Book Project</a>.<br/>
+              </li>
+            </ul>
+          </div>
 
-  
-  
-    
-    <!-- Theme Analytics -->
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          <div class="col-xs-6 col-md-2">
+            <ul class="footer-links">
+              <li><a href="https://superkogito.github.io/policy/privacy_policy.html">Privacy Policy</a></li>
+              <li><a href="https://superkogito.github.io/policy/cookies_policy.html">Cookies policy</a></li>
+            </ul>
+          </div>
 
-    ga('create', 'UA-133660046-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
+          <div class="col-xs-6 col-md-2">
+            <ul class="footer-links">
+              <li><a href="https://superkogito.github.io/policy/terms_and_conditions.html">Terms and conditions</a></li>
+              <li><a href="https://superkogito.github.io/policy/disclaimer.html">Disclaimer</a></li>
+            </ul>
+          </div>
 
-    
-   
-</body>
+          <div class="col-xs-6 col-md-2">
+            <ul class="footer-links">
+              <li><a href="https://superkogito.github.io/policy/contribute.html">Contribute</a></li>
+              <li><a href="https://superkogito.github.io/sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+
+    </div>
+  </footer>
+  </body>
 </html>
