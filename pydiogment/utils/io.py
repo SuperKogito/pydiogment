@@ -10,7 +10,7 @@ def read_file(filename):
     Read wave file as mono.
 
     Args:
-        - filename (str) : wave file / path.
+        filename (str) : wave file / path.
 
     Returns:
         tuple of sampling rate and audio data.
@@ -28,11 +28,11 @@ def write_file(output_file_path, input_file_name, name_attribute, sig, fs):
     Read wave file as mono.
 
     Args:
-        - output_file_path (str) : path to save resulting wave file to.
-        - input_file_name  (str) : name of processed wave file,
-        - name_attribute   (str) : attribute to add to output file name.
-        - sig            (array) : signal/audio array.
-        - fs               (int) : sampling rate.
+        output_file_path (str) : path to save resulting wave file to.
+        input_file_name  (str) : name of processed wave file,
+        name_attribute   (str) : attribute to add to output file name.
+        sig            (array) : signal/audio array.
+        fs               (int) : sampling rate.
 
     Returns:
         tuple of sampling rate and audio data.

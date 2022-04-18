@@ -13,9 +13,9 @@ def convolve(infile, ir_fname, level=0.5):
     Apply convolution to infile using the given impulse response file.
 
     Args:
-        - infile   (str) : input filename/path.
-        - ir_fname (str) : name of impulse response file.
-        - level  (float) : can be between 0 and 1, default value = 0.5
+        infile   (str) : input filename/path.
+        ir_fname (str) : name of impulse response file.
+        level  (float) : can be between 0 and 1, default value = 0.5
     """
     # read input file
     fs1, x = read_file(filename=infile)
@@ -46,8 +46,8 @@ def change_tone(infile, tone):
     Change the tone of an audio file.
 
     Args:
-        - infile (str) : input audio filename.
-        - tone   (int) : tone to change.
+        infile (str) : input audio filename.
+        tone   (int) : tone to change.
     """
     # read input file
     fs, _ = read_file(filename=infile)
@@ -74,11 +74,11 @@ def apply_filter(infile, filter_type, low_cutoff_freq, high_cutoff_freq=None, or
     Apply a certain type of Buttenworth filter on the input audio.
 
     Args:
-        - infile             (str) : input audio filename.
-        - filter_type        (str) : type of the filter to apply.
-        - low_cutoff_freq  (float) : the low cut-off frequency of the filter.
-        - high_cutoff_freq (float) : the high cut-off frequency of the filter.
-        - order              (int) : filter order to define its accuracy.
+        infile             (str) : input audio filename.
+        filter_type        (str) : type of the filter to apply.
+        low_cutoff_freq  (float) : the low cut-off frequency of the filter.
+        high_cutoff_freq (float) : the high cut-off frequency of the filter.
+        order              (int) : filter order to define its accuracy.
     """
     # read input file
     fs, sig = read_file(filename=infile)

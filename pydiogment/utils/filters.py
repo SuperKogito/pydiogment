@@ -1,7 +1,7 @@
 """
 - Description: implements the scipybased Butterworth filters.
-bandpas: https://stackoverflow.com/questions/12093594/how-to-implement-band-pass-butterworth-filter-with-scipy-signal-butter
-highpass: https://stackoverflow.com/questions/39032325/python-high-pass-filter
+    - bandpas: https://stackoverflow.com/questions/12093594/how-to-implement-band-pass-butterworth-filter-with-scipy-signal-butter
+    - highpass: https://stackoverflow.com/questions/39032325/python-high-pass-filter
 """
 from scipy.signal import butter, lfilter
 
@@ -11,9 +11,9 @@ def butter_lowpass(cutoff, fs, order=5):
     Design lowpass filter.
 
     Args:
-        - cutoff (float) : the cutoff frequency of the filter.
-        - fs     (float) : the sampling rate.
-        - order    (int) : order of the filter, by default defined to 5.
+        cutoff (float) : the cutoff frequency of the filter.
+        fs     (float) : the sampling rate.
+        order    (int) : order of the filter, by default defined to 5.
     """
     # calculate the Nyquist frequency
     nyq = 0.5 * fs
@@ -31,9 +31,9 @@ def butter_highpass(cutoff, fs, order=5):
     Design a highpass filter.
 
     Args:
-        - cutoff (float) : the cutoff frequency of the filter.
-        - fs     (float) : the sampling rate.
-        - order    (int) : order of the filter, by default defined to 5.
+        cutoff (float) : the cutoff frequency of the filter.
+        fs     (float) : the sampling rate.
+        order    (int) : order of the filter, by default defined to 5.
     """
     # calculate the Nyquist frequency
     nyq = 0.5 * fs
@@ -51,10 +51,10 @@ def butter_bandpass(low_cut, high_cut, fs, order=5):
     Design band pass filter.
 
     Args:
-        - low_cut  (float) : the low cutoff frequency of the filter.
-        - high_cut (float) : the high cutoff frequency of the filter.
-        - fs       (float) : the sampling rate.
-        - order      (int) : order of the filter, by default defined to 5.
+        low_cut  (float) : the low cutoff frequency of the filter.
+        high_cut (float) : the high cutoff frequency of the filter.
+        fs       (float) : the sampling rate.
+        order      (int) : order of the filter, by default defined to 5.
     """
     # calculate the Nyquist frequency
     nyq = 0.5 * fs
@@ -73,12 +73,12 @@ def butter_filter(sig, fs, ftype="low", low_cut=50, high_cut=2000, order=5):
     Apply filter to signal.
 
     Args:
-        - sig      (array) : the signal array to filter.
-        - fs       (float) : the sampling rate.
-        - ftype      (str) : the filter type, by default defined to a low pass filter
-        - low_cut  (float) : the low cutoff frequency, by default defined to  50Hz
-        - high_cut (float) : the high cutoff frequency, by default defined to 2000Hz.
-        - order      (int) : order of the filter, by default defined to 5.
+        sig      (array) : the signal array to filter.
+        fs       (float) : the sampling rate.
+        ftype      (str) : the filter type, by default defined to a low pass filter
+        low_cut  (float) : the low cutoff frequency, by default defined to  50Hz
+        high_cut (float) : the high cutoff frequency, by default defined to 2000Hz.
+        order      (int) : order of the filter, by default defined to 5.
 
     Returns:
         array of the filtered signal.
