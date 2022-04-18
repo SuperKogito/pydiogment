@@ -14,6 +14,7 @@
 #
 import os
 import sys
+from datetime import datetime
 sys.path.insert(0, os.path.abspath('../..'))
 sys.path.insert(0, os.path.abspath('../../pydiogment/'))
 
@@ -21,9 +22,10 @@ sys.path.insert(0, os.path.abspath('../../pydiogment/'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'pydiogment'
-copyright = '2020, Ayoub Malek'
+project = '🧠 SuperKogito/pydiogment'
+copyright = "2019-%s, Ayoub Malek" % datetime.now().year
 author = 'Ayoub Malek'
+html_favicon = "_static/favicon_io/favicon.ico"
 
 # The short X.Y version
 version = ''
@@ -44,6 +46,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
+    'sphinxcontrib.napoleon',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
@@ -83,26 +86,45 @@ pygments_style = None
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_theme = 'alabaster'
+html_theme = "pydata_sphinx_theme"
 
-import sphinx_rtd_theme
-
-html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-                        'canonical_url': '',
-                        'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
-                        'logo_only': True,
-                        'display_version': True,
-                        'prev_next_buttons_location': 'bottom',
-                        'style_external_links': False,
-                        # Toc options
-                        'collapse_navigation': True,
-                        'sticky_navigation': True,
-                        'navigation_depth': 4,
-                        'includehidden': True,
-                        'titles_only': False
+    "github_url": "https://github.com/superkogito/",
+    "search_bar_text": "Search this site...",
+    "google_analytics_id": "UA-133660046-1",
+
+    "navbar_start": ["navbar-logo"],
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": ["search-field.html", "version-switcher", "navbar-icon-links"],
+
+    "switcher": {
+        "json_url": "https://pandas.pydata.org/versions.json",
+        "url_template": "https://pandas.pydata.org/{version}/",
+    },
+
+    "external_links": [
+        {"name": "Home", "url": "https://superkogito.github.io/index.html"},
+        {"name": "Projects", "url": "https://superkogito.github.io/projects.html"},
+        {"name": "Blog", "url": "https://superkogito.github.io/blog.html"},
+        {"name": "About Me", "url": "https://superkogito.github.io/about.html"}
+    ],
 }
-html_logo = "_static/icon.png"
+
+html_sidebars = {
+    "index.html": ["sidebar-nav-bs.html"],
+    "**": ["sidebar-nav-bs.html", ]
+}
+
+
+blog_baseurl = "https://superkogito.github.io"
+blog_title = "SuperKogito"
+blog_path = "blog"
+fontawesome_included = True
+blog_post_pattern = "blog/*/*"
+post_redirect_refresh = 1
+post_auto_image = 0
+post_auto_excerpt = 1
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -113,6 +135,11 @@ html_logo = "_static/icon.png"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = [
+    "css/custom.css",
+    "css/tree_graph.css",
+    "css/social_media_sharing.css",
+]
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -205,7 +232,12 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+# intersphinx
+intersphinx_mapping = {
+    "numpy": ("https://numpy.org/doc/stable/", None),
+    "python": ("https://docs.python.org/", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/", None),
+}
 
 # -- Options for todo extension ----------------------------------------------
 
